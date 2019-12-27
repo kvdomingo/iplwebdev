@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Instrumentation Physics Laboratory</title>
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/js/jquery.js"></script>
+	<script src="/js/popper.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/jquery.dataTables.js"></script>
+    <script src="/js/dataTables.bootstrap4.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/custom.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <script src="/js/bs_init.js"></script>
+</head>
+<body>
+    <nav class="nav navbar navbar-expand-xl bg-light font-weight-bold sticky-top" role="navigation">
+    	<div class="container-fluid">
+    		<div class="navbar-header col-sm-3">
+    			<a class="navbar-brand" href="index.php"><img src="images/IPL Logo.png" style="max-width: 100%; height: auto"></a>
+    		</div>
+    		<button type="button" class="navbar-toggler navbar-toggler-right collapsed bg-success" data-toggle="collapse" data-target="#instru-navbar" aria-controls="instru-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="sr-only">Toggle navigation</span>
+    			<span class="navbar-toggler-icon"></span>
+    		</button>
+    		<div class="collapse navbar-collapse" id="instru-navbar">
+    			<ul class="nav navbar-nav navbar-right">
+    				<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+    				<li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+    				<li class="dropdown nav-item">
+    					<a class="dropdown-toggle nav-link" href="#research" data-toggle="dropdown" role="button" aria-expand="false">RESEARCH</a>
+    					<ul class="dropdown-menu" style="margin-top: 0">
+    						<a class="dropdown-item" href="#teamone">Team One</a>
+    						<a class="dropdown-item" href="#syncbiooptics">Synchronization &amp; BioOptics</a>
+    						<a class="dropdown-item" href="#vip">Video and Image Processing</a>
+    						<a class="dropdown-item" href="#csg">Complexity Science Group</a>
+    						<a class="dropdown-item" href="#cxteam">CX Team</a>
+    					</ul>
+    				</li>
+    				<li class="nav-item"><a class="nav-link" href="/publications">PUBLICATIONS</a></li>
+    				<li class="nav-item"><a class="nav-link" href="#members">MEMBERS</a></li>
+    				<li class="nav-item"><a class="nav-link" href="#awards">AWARDS</a></li>
+    				<li class="nav-item"><a class="nav-link" href="#featured">FEATURED</a></li>
+    				<li class="nav-item"><a class="nav-link" href="#news">NEWS</a></li>
+    				<li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+    				<li class="nav-item"><a class="nav-link" href="#join">JOIN</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+
+    <footer class="container-fluid">
+    	<div class="row">
+    		<div class="col-2">
+    			<a href="index.php"><img class="navbar-brand img-fluid" src="images/IPL Logo - no text.png" style="max-width: 100%; height: auto"></a>
+    		</div>
+    		<div class="col">
+    			<p>National Institute of Physics, College of Science, University of the Philippines, Diliman 1101 Quezon City, Philippines<br />
+    			Telephone: +63 2 981 8500 loc. 3701-03<br />
+    			Program Coordinator: Prof. Caesar Saloma<br />
+    			Email: <a href="mailto:csaloma@nip.upd.edu.ph">csaloma@nip.upd.edu.ph</a><br />
+    			&copy; 1983-{{ this_year }} Instrumentation Physics Laboratory</p>
+    		</div>
+    	</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,249 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- Slider -->
+<div id="homeslide" class="container-fluid carousel slide" data-ride="carousel" style="height: 500px; margin-top: 20px">
+
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#homeslide" data-slide-to="0" class="active"></li>
+        {% for sf in slider_files %}
+            <li data-target="#homeslide" data-slide-to="{{ loop.index }}"></li>
+        {% endfor %}
+	</ol>
+
+	<!-- Slideshow -->
+	<div class="carousel-inner my-auto" style="padding: 20pt; height: auto" role="listbox">
+
+		<!-- IPL -->
+		<div class="carousel-item active">
+			<div class="row">
+				<div class="col-sm-4">
+						<img src="images/IPL Text.png" alt="official IPL logo" style="max-width: 100%; height: auto">
+				</div>
+				<div class="col" style="padding-right: 10%">
+					{% include "content/1-home-carousel-p1.html" %}
+				</div>
+			</div>
+		</div>
+
+		<!-- NIP -->
+		<div class="carousel-item">
+			<div class="row">
+				<div class="col-sm-4">
+						<img src="images/National_Institute_of_Physics_logo.png" alt="official NIP logo" style="max-width: 75%; height: auto">
+				</div>
+				<div class="col my-auto h-100" style="padding-right: 10%">
+					{% include "content/2-home-carousel-p2.html" %}
+				</div>
+			</div>
+		</div>
+
+		<!-- Group photo -->
+		<div class="carousel-item">
+			<div class="row">
+				<div class="col">
+					<img src="images/ipl grp.jpg" style="max-width: 100%">
+				</div>
+				<div class="col text-center my-auto h-100">
+					{% for name in adviser_names %}
+						<img style="max-width: 15%; height: auto; padding: 2px 2px" src="{{ url_for('static', filename='images/' + name + '.jpg') }}">
+					{% endfor %}
+					<br><br>
+					<p>The Instrumentation Physics Laboratory currently has 5 full-time Ph.D. faculty supervising 54 student-members (7 Ph.D., 11 M.S., 36 BS) under 5 research subgroups.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Saloma -->
+		<div class="carousel-item">
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<img style="max-width: 50%; height: auto" src="images/Saloma.jpg">
+				</div>
+				<div class="col my-auto h-100" style="padding-right: 10%">
+					{% include "content/5-home-carousel-csaloma.txt" %}
+				</div>
+			</div>
+		</div>
+
+		<!-- Soriano -->
+		<div class="carousel-item">
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<img style="max-width: 50%; height: auto" src="images/Soriano.jpg">
+				</div>
+				<div class="col my-auto h-100" style="padding-right: 10%">
+					{% include "content/6-home-carousel-msoriano.txt" %}
+				</div>
+			</div>
+		</div>
+
+		<!-- Lim -->
+		<div class="carousel-item">
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<img style="max-width: 50%; height: auto" src="images/Lim.jpg">
+				</div>
+				<div class="col my-auto h-100" style="padding-right: 10%">
+					{% include "content/7-home-carousel-mlim.txt" %}
+				</div>
+			</div>
+		</div>
+
+		<!-- Tapang -->
+		<div class="carousel-item">
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<img style="max-width: 50%; height: auto" src="images/Tapang.jpg">
+				</div>
+				<div class="col my-auto h-100" style="padding-right: 10%">
+					{% include "content/8-home-carousel-gtapang.txt" %}
+				</div>
+			</div>
+		</div>
+
+		<!-- Bantang -->
+		<div class="carousel-item">
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<img style="max-width: 50%; height: auto" src="images/Bantang.jpg">
+				</div>
+				<div class="col my-auto h-100" style="padding-right: 10%">
+					{% include "content/9-home-carousel-jbantang.txt" %}
+				</div>
+			</div>
+		</div>
+
+		<!-- CS Dean -->
+		<div class="carousel-item">
+			<div class="row">
+				<div class="col">
+						<img src="images/csdean.jpg" style="max-width: 75%; height: auto">
+				</div>
+				<div class="col my-auto h-100" style="padding-right: 10%">
+					{% include "content/3-home-carousel-p3.txt" %}
+				</div>
+			</div>
+		</div>
+
+		<!-- IPL Coordinator -->
+		<div class="carousel-item">
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<img style="max-width: 50%; height: auto" src="images/Saloma.jpg">
+				</div>
+				<div class="col my-auto h-100" style="padding-right: 10%">
+					{% include "content/4-home-carousel-p4.txt" %}
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Slide controls -->
+	<a class="carousel-control-prev" href="#homeslide" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+	</a>
+	<a class="carousel-control-next" href="#homeslide" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+	</a>
+</div>
+
+<!-- Research -->
+<div class="container-fluid text-light" style=" padding-top: 50px; padding-bottom: 50px; background: #629b39">
+	<h2 class="text-center">Research</h2>
+	<div class="card-deck">
+		<div class="card" style="background-color: rgba(245, 245, 245, 0.0); border: none">
+			<img class="card-img-top" src="images/signalproc.png">
+			<div class="card-body">
+				<h4 class="card-title text-center">Signal Processing</h4>
+			</div>
+		</div><div class="card" style="background-color: rgba(245, 245, 245, 0.0); border: none">
+			<img class="card-img-top" src="images/cxsystems.png">
+			<div class="card-body">
+				<h4 class="card-title text-center">Complex Systems &amp; Networks</h4>
+			</div>
+		</div>
+		<div class="card" style="background-color: rgba(245, 245, 245, 0.0); border: none">
+			<img class="card-img-top" src="images/videoimgproc.png">
+			<div class="card-body">
+				<h4 class="card-title text-center">Video &amp; Image Processing</h4>
+			</div>
+		</div>
+		<div class="card" style="background-color: rgba(245, 245, 245, 0.0); border: none">
+			<img class="card-img-top" src="images/bio.png">
+			<div class="card-body">
+				<h4 class="card-title text-center">Biological Systems</h4>
+			</div>
+		</div>
+		<div class="card" style="background-color: rgba(245, 245, 245, 0.0); border: none">
+			<img class="card-img-top" src="images/optics.png">
+			<div class="card-body">
+				<h4 class="card-title text-center">Optics</h4>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Principal investigators -->
+<div class="container-fluid" style="padding-top: 50px; padding-bottom: 50px">
+	<h3 class="text-center">Principal Investigators</h3>
+	<div class="card-deck">
+		<div class="card">
+			<a href="#saloma" class="stretched-link"><img class="card-img" src="images/Saloma.jpg"></a>
+			<div class="card-body text-center">
+				<p>Dr. Caesar Saloma</p>
+			</div>
+		</div>
+		<div class="card">
+			<a href="#soriano" class="stretched-link"><img class="card-img" src="images/Soriano.jpg"></a>
+			<div class="card-body text-center">
+				<p>Dr. Maricor Soriano</p>
+			</div>
+		</div>
+		<div class="card">
+			<a href="#lim" class="stretched-link"><img class="card-img" src="images/Lim.jpg"></a>
+			<div class="card-body text-center">
+				<p>Dr. May Lim</p>
+			</div>
+		</div>
+		<div class="card">
+			<a href="#tapang" class="stretched-link"><img class="card-img" src="images/Tapang.jpg"></a>
+			<div class="card-body text-center">
+				<p>Dr. Giovanni Tapang</p>
+			</div>
+		</div>
+		<div class="card">
+			<a href="#bantang" class="stretched-link"><img class="card-img" src="images/Bantang.jpg"></a>
+			<div class="card-body text-center">
+				<p>Dr. Johnrob Bantang</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Recent publications -->
+<div class="container-fluid" style="padding-top: 50px; padding-bottom: 50px">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-8">
+			<h3 class="text-center">Recent Publications</h3>
+			<ul class="list-group">
+				{% for pub in recent_publ %}
+					<a href="https://paperview.spp-online.org/proceedings/article/view/SPP-2019-{{ pub.spp_code }}" class="list-group-item list-group-item-action">
+						{{ pub.authors }}. {{ pub.title }}. <i>Proceedings of the Samahang Pisika ng Pilipinas Physics Conference</i> (Bohol Tropics Resort, Tagbilaran City, Bohol, 2019), vol. 37, SPP-2019-{{ pub.spp_code }}.
+					</a>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="col-1 text-center">
+			<h3 class="text-center">Links</h3>
+			<a href="http://www.nip.upd.edu.ph/"><img src="images/National_Institute_of_Physics_logo.png" class="img-fluid"></a>
+			<a href="http://www.science.upd.edu.ph/"><img src="images/CS.png" class="img-fluid"></a>
+			<a href="http://upd.edu.ph/"><img src="images/UP.png" class="img-fluid"></a>
+			<a href="http://spp-online.org/"><img src="images/SPP.png" class="img-fluid"></a>
+		</div>
+	</div>
+</div>
+{% endblock %}
