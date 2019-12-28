@@ -52,11 +52,10 @@
     								<td>{{ pub.month }} {{ pub.year }}</td>
                                 {% if pub.url|length > 0 %}
     								<td><a href="{{ pub.url }}" class="btn btn-success" style="border-radius: 30px" role="button" target="_blank">Read</a></td>
-    								</tr>
     							{% else %}
     								<td><a href="{{ pub.url }}" class="btn btn-success disabled" style="border-radius: 30px" role="button" target="_blank">Read</a></td>
-    								</tr>
                                 {% endif %}
+                                </tr>
                             {% endfor %}
                         </tbody>
                     </table>

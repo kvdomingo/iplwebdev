@@ -19,10 +19,10 @@ try:
     res = db.execute("SELECT * FROM spp")
     print("Using local db")
 except exc.OperationalError:
-    serverhost = "ec2-54-235-86-101.compute-1.amazonaws.com"
-    dbusername = "pdaycgrbifbsro"
-    dbpass = "e3e53bca35bc08407da364143594b1cb66c6c4d40d641c20f9cd1d7e45982b48"
-    dbname = "d8g032nnrlavph"
+    serverhost = "ec2-107-22-216-123.compute-1.amazonaws.com"
+    dbusername = "nsrmkjoiqfjjsp"
+    dbpass = "6a666281fe79f531447f30f4b82c0d4faf7adb8fd4dd649bbca920bbd6a27384"
+    dbname = "d26ufums94l5nf"
     engine = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
     db = scoped_session(sessionmaker(bind=engine))
     res = db.execute("SELECT * FROM spp")
