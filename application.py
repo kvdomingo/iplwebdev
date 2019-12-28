@@ -17,6 +17,7 @@ try:
     engine = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
     db = scoped_session(sessionmaker(bind=engine))
     res = db.execute("SELECT * FROM spp")
+    print("Using local db")
 except exc.OperationalError:
     serverhost = "ec2-54-235-86-101.compute-1.amazonaws.com"
     dbusername = "pdaycgrbifbsro"
@@ -25,21 +26,31 @@ except exc.OperationalError:
     engine = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
     db = scoped_session(sessionmaker(bind=engine))
     res = db.execute("SELECT * FROM spp")
-
+    print("Using Heroku db")
 
 @app.route("/")
 def index():
     this_year = datetime.now().year
     slider_files = os.listdir("web/templates/content")
     adviser_names = ["Saloma", "Soriano", "Lim", "Tapang", "Bantang"]
-    adviser_pics = [f"web/static/images/{f}.jpg" for f in adviser_names]
+    adviser_pics = [f"images/{f}.jpg" for f in adviser_names]
     recent_publ = db.execute("SELECT * FROM spp WHERE year = '2019' LIMIT 5").fetchall()
+    carousel_pics = ["IPL Text.png", "National_Institute_of_Physics_logo.png",
+                    "ipl grp.jpg", "Saloma.jpg",
+                    "Soriano.jpg", "Lim.jpg",
+                    "Tapang.jpg", "Bantang.jpg",
+                    "csdean.jpg", "Saloma.jpg"]
+    research_pics = ["signalproc.png", "cxsystems.png",
+                    "videoimgproc.png", "bio.png",
+                    "optics.png"]
     return render_template("index.html",
                             this_year=this_year,
                             adviser_names=adviser_names,
                             slider_files=slider_files,
                             adviser_pics=adviser_pics,
-                            recent_publ=recent_publ)
+                            recent_publ=recent_publ,
+                            carousel_pics=carousel_pics,
+                            research_pics=research_pics)
 
 
 @app.route("/publications")
