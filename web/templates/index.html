@@ -7,7 +7,7 @@
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
 		<li data-target="#homeslide" data-slide-to="0" class="active"></li>
-        {% for sf in slider_files %}
+        {% for sf in range((slider_files|count) - 1) %}
             <li data-target="#homeslide" data-slide-to="{{ loop.index }}"></li>
         {% endfor %}
 	</ol>
