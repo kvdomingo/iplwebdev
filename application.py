@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 from flask import Flask, render_template
 from sqlalchemy import create_engine, exc
-from sqlalchemy.orm import scoped_session, sessionmaker
+# from sqlalchemy.orm import scoped_session, sessionmaker
 
 app = Flask(__name__,
             static_url_path="",
@@ -14,8 +14,8 @@ try:
     dbusername = "postgres"
     dbpass = "16431879199842"
     dbname = "postgres"
-    engine = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
-    db = scoped_session(sessionmaker(bind=engine))
+    db = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
+    # db = scoped_session(sessionmaker(bind=engine))
     res = db.execute("SELECT * FROM spp")
     print("Using local db")
 except exc.OperationalError:
@@ -23,8 +23,8 @@ except exc.OperationalError:
     dbusername = "nsrmkjoiqfjjsp"
     dbpass = "6a666281fe79f531447f30f4b82c0d4faf7adb8fd4dd649bbca920bbd6a27384"
     dbname = "d26ufums94l5nf"
-    engine = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
-    db = scoped_session(sessionmaker(bind=engine))
+    db = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
+    # db = scoped_session(sessionmaker(bind=engine))
     res = db.execute("SELECT * FROM spp")
     print("Using Heroku db")
 
@@ -34,7 +34,7 @@ def index():
     slider_files = os.listdir("web/templates/content")
     adviser_names = ["Saloma", "Soriano", "Lim", "Tapang", "Bantang"]
     adviser_pics = [f"images/{f}.jpg" for f in adviser_names]
-    recent_publ = db.execute("SELECT * FROM spp WHERE year = '2019' LIMIT 5").fetchall()
+    recent_publ = db.execute("SELECT * FROM regular WHERE year = 2019 LIMIT 3;").fetchall()
     carousel_pics = ["IPL Text.png", "National_Institute_of_Physics_logo.png",
                     "ipl grp.jpg", "Saloma.jpg",
                     "Soriano.jpg", "Lim.jpg",
@@ -53,6 +53,11 @@ def index():
                             research_pics=research_pics)
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
 @app.route("/publications")
 def publications():
     reg_years = [2019, 2018, 2017]
@@ -60,12 +65,12 @@ def publications():
     regular = []
     spp = []
     for y in reg_years:
-        res = db.execute("SELECT * FROM regular WHERE year = :year",
-                        {"year": y}).fetchall()
+        res = db.execute("SELECT * FROM regular WHERE year = %s;",
+                        (y)).fetchall()
         regular.append(res)
     for y in spp_years:
-        res = db.execute("SELECT * FROM spp WHERE year = :year",
-                        {"year": str(y)}).fetchall()
+        res = db.execute("SELECT * FROM spp WHERE year = %s;",
+                        str(y)).fetchall()
         spp.append(res)
     return render_template("publications.html",
                             regular=regular,

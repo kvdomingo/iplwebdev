@@ -8,13 +8,9 @@
     <script src="/js/jquery.js"></script>
 	<script src="/js/popper.js"></script>
     <script src="/js/bootstrap.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
     <script src="/js/jquery.dataTables.js"></script>
     <script src="/js/dataTables.bootstrap4.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="/css/custom.css" />
@@ -39,7 +35,7 @@
     		<div class="collapse navbar-collapse" id="instru-navbar">
     			<ul class="nav navbar-nav navbar-right">
     				<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
-    				<li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+    				<li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>
     				<li class="dropdown nav-item">
     					<a class="dropdown-toggle nav-link" href="#research" data-toggle="dropdown" role="button" aria-expand="false">RESEARCH</a>
     					<ul class="dropdown-menu" style="margin-top: 0">
@@ -72,25 +68,36 @@
     {% block body %}
     {% endblock %}
 
-    <footer class="container-fluid bg-light">
-        <div class="row" style="margin: 0% 1%">
+    <footer class="container-fluid" style="padding-top: 0">
+        <div class="row" style="padding: 2% 1%">
+            <div class="col">
+                <h5>For Members</h5>
+                <hr />
+                <a href="https://our.upd.edu.ph/files/calendar/regular/ACAD%20CAL%202019-2020.pdf">Important Dates</a><br />
+                <a href="https://docs.google.com/spreadsheets/u/2/d/1qChkLCnlDHZZHZmLgaXndxaQ7H_nRII9a9BpUABdxiU">Seminars</a><br />
+                <a href="https://docs.google.com/forms/d/1Mc8RJBauLujmmmpBzJ-cyp3Lm92lr3CXIcc7yhqAHZs/viewform">Submit a Plenary Talk</a><br />
+                <a href="https://docs.google.com/forms/d/1fbLDj27YFPcf5ZMxjLHOOq9YeXzLAyCsjW_rOV2hWQk/viewform">Excuse Form</a><br />
+                <a href="https://docs.google.com/forms/d/1bGmMcnAu04fY1VjQrcH_tr-pOCju5X9fpLCO0ytdJ-k/viewform">Report an Achievement</a><br />
+                <a href="https://docs.google.com/a/nip.upd.edu.ph/forms/d/1K4Xp9TDGnR_FNwYNtcHA53IFYFVNO9mWx5XMCeWIiEo/viewform">Report a Publication Acceptance</a>
+            </div>
             <div class="col">
                 <b>Instrumentation Physics Laboratory</b><br />
                 National Institute of Physics, College of Science<br />
                 University of the Philippines, Diliman <br />
                 1101 Quezon City, Philippines<br />
+                +63 (2) 981 8500 loc. 3701-03<br />
+                <h3>
+                    <a href="https://www.facebook.com/officialinstru" class="fab fa-facebook-square"></a>
+                    <a href="https://www.twitter.com/officialinstru" class="fab fa-twitter-square"></a>
+                    <a href="mailto:csaloma@nip.upd.edu.ph" class="fas fa-envelope-square"></a>
+                </h3>
+                &copy; {{ this_year }} Instrumentation Physics Laboratory
             </div>
-            <div class="col">
-                Telephone: +63 2 981 8500 loc. 3701-03<br />
-        		Program Coordinator: Prof. Caesar Saloma<br />
-        		Email: <a href="mailto:csaloma@nip.upd.edu.ph">csaloma@nip.upd.edu.ph</a><br />
-            </div>
-            <div class="col">
-                <h2>
-                    <a href="https://www.facebook.com/officialinstru" class="fab fa-facebook"></a>
-                    <a href="https://www.twitter.com/officialinstru" class="fab fa-twitter"></a>
-                </h2>
-                &copy; 1983-{{ this_year }} Instrumentation Physics Laboratory
+            <div class="col" style="height: 100px">
+                <a href="http://upd.edu.ph/"><img src="images/UP.png" class="img-fluid" style="height: 100%; padding: 20px 5px 0 5px"></a>
+                <a href="http://www.science.upd.edu.ph/"><img src="images/CS.png" class="img-fluid" style="height: 100%; padding: 20px 5px 0 5px"></a>
+                <a href="http://www.nip.upd.edu.ph/"><img src="images/National_Institute_of_Physics_logo.png" class="img-fluid" style="height: 100%; padding: 20px 5px 0 5px"></a>
+    			<a href="http://spp-online.org/"><img src="images/SPP.png" class="img-fluid" style="height: 100%; padding: 20px 5px 0 5px"></a>
             </div>
         </div>
     </footer>

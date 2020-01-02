@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
+
 <!-- Slider -->
 <div id="homeslide" class="container-fluid carousel slide" data-ride="carousel" style="height: 400px; margin-top: 20px">
 
@@ -78,27 +79,33 @@
 	</div>
 </div>
 
-<!-- Recent publications -->
-<div class="container-fluid" style="padding-top: 50px; padding-bottom: 50px">
+<!-- Current affairs -->
+<div class="container-fluid" style="padding: 50px 3%">
 	<div class="row">
-		<div class="col-sm-1"></div>
-		<div class="col-sm-8">
-			<h3 class="text-center">Recent Publications</h3>
-			<ul class="list-group">
-				{% for pub in recent_publ %}
-					<a href="https://paperview.spp-online.org/proceedings/article/view/SPP-2019-{{ pub.spp_code }}" class="list-group-item list-group-item-action">
-						{{ pub.authors }}. {{ pub.title }}. <i>Proceedings of the Samahang Pisika ng Pilipinas Physics Conference</i> (Bohol Tropics Resort, Tagbilaran City, Bohol, 2019), vol. 37, SPP-2019-{{ pub.spp_code }}.
-					</a>
-				{% endfor %}
-			</ul>
+        <div class="col">
+            <h3>Seminar</h3>
+        	<h5><a href="http://dx.doi.org/10.1016/j.patcog.2019.107051">Learning Image Compressed Sensing with Sub-Pixel Convolutional Generative Adversarial Networks</a></h5>
+			<p class="text-secondary">2 December 2019 | 2:00 PM | NIP LP101</p>
+			<hr />
+        	<h5><a href="http://ieeexplore.ieee.org/document/5720310/">Anti-Forensics of Image Compression</a></h5>
+			<p class="text-secondary">2 December 2019 | 2:20 PM | NIP LP101</p>
+			<hr />
+        	<h5><a href="http://arxiv.org/abs/math/0503066v2">Stable Signal Recovery from Incomplete and Inaccurate Measurements</a></h5>
+			<p class="text-secondary">2 December 2019 | 2:40 PM | NIP LP101</p>
+        </div>
+		<div class="col">
+			<h3>Recent Publications</h3>
+			{% for pub in recent_publ %}
+					{{ pub.authors }}. <a href="{{ pub.url }}">{{ pub.title }}</a>. <i>{{ pub.journal }} <b>{{ pub.volume }}</b></i>. ({{ pub.year }}).<hr />
+			{% endfor %}
+			<a href="/publications">See more...</a>
 		</div>
-		<div class="col-1 text-center">
-			<h3 class="text-center">Links</h3>
-			<a href="http://www.nip.upd.edu.ph/"><img src="images/National_Institute_of_Physics_logo.png" class="img-fluid"></a>
-			<a href="http://www.science.upd.edu.ph/"><img src="images/CS.png" class="img-fluid"></a>
-			<a href="http://upd.edu.ph/"><img src="images/UP.png" class="img-fluid"></a>
-			<a href="http://spp-online.org/"><img src="images/SPP.png" class="img-fluid"></a>
+		<div class="col">
+			<h3>Twitter</h3>
+			<a class="twitter-timeline" data-height="400" href="https://twitter.com/officialinstru?ref_src=twsrc%5Etfw"></a>
+			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 	</div>
 </div>
+
 {% endblock %}
