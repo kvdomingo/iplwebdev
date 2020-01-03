@@ -27,8 +27,9 @@
 					</div>
 					<div class="col my-auto">
 						{% if forloop.counter < 10 %}
-							{% with "web/content/0"|addstr:forloop.counter|addstr:"-home.html" as template %}
-								{% include template %}
+							{% with "web/content/0"|add:forloop.counter as content %}
+							{% with content|add:"-home.html" as content}
+								{% include content %}
 							{% endwith %}
 						{% else %}
 							{% with "web/content/"|add:forloop.counter|add:"-home.html" as content %}

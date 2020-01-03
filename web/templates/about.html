@@ -1,65 +1,36 @@
-{% extends "layout.html" %}
+{% extends "offhome_layout.html" %}
+{% set active_page = 'about' %}
 
-{% block body %}
-<style>
-    .jumbotron-cover {
-        background: url('images/ipl grp.jpg') no-repeat center center fixed;
-        background-size: cover;
-        height: 400px;
-    }
-</style>
+{% block title %}
+    About
+{% endblock %}
 
-<div class="jumbotron jumbotron-cover" style="position: relative">
-    <div class="col-6 text-white" style="background-color: rgba(0, 0, 0, 0.6); position: absolute; bottom: 0; padding: 50px 20px; margin: 0 50px">
-        <div class="align-text-bottom h-100 justify-content-end">
-            <h5>INSTRUMENTATION PHYSICS LABORATORY</h5>
-            <h1>About Instru</h1>
-        </div>
+{% block heading %}
+    About Instru
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nesciunt dicta commodi error velit beatae reprehenderit cumque placeat atque, illo alias, in soluta repellendus quis voluptas modi numquam id ex rem sit expedita dolores. Velit sequi maiores voluptas perferendis perspiciatis, minima molestias aliquid ut, fugit ratione porro vero laborum sed, molestiae tempora qui nostrum, nam fugiat quos doloremque quibusdam distinctio. Eaque optio magnam, velit modi, fugit eveniet dolor quibusdam repellat. Nesciunt quam ipsum, magni ullam? Earum deleniti eaque eveniet ab sequi delectus, molestiae odio voluptatem voluptatibus eius sapiente numquam nemo, tempora! Autem rerum ducimus quibusdam beatae corrupti, voluptatum, doloribus consectetur.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, possimus, doloribus! Illum velit magni deleniti eveniet harum veritatis totam enim explicabo voluptatibus molestias animi iure minus doloribus omnis distinctio doloremque perspiciatis repudiandae labore optio error esse hic sequi, dolore quos. Laudantium qui cum odio dolore eum. Itaque nisi consectetur unde minima numquam voluptate consequatur earum, eaque accusantium tenetur facere autem mollitia fugiat quod tempora modi, ab temporibus. At reiciendis voluptate modi, animi provident exercitationem nam voluptatibus fugiat, impedit, mollitia necessitatibus ipsam doloribus eligendi officiis sequi quibusdam earum libero nemo eaque. Nemo hic, eveniet, nobis cupiditate iure quia non molestias eius.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempora sit placeat facere corporis eos quam fugiat asperiores voluptatibus molestias, unde nam cupiditate recusandae deserunt neque, quasi iste quia quos delectus. Veniam, ab suscipit a sint dolorem illum quidem quaerat! Deserunt minus impedit fugit quae, at mollitia, libero vel maxime eligendi eveniet voluptatum unde, earum placeat dicta animi ipsa porro dolorem delectus expedita necessitatibus numquam eius nam cumque suscipit. Error nostrum est voluptate, reprehenderit obcaecati ad veniam atque quos tenetur nisi illo ducimus omnis quas quis. Vero blanditiis voluptatibus, esse, laborum facere, facilis qui, possimus magni eum reiciendis aliquid molestiae.
+        </p>
+        <br />
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2xGu1Dn_kW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br /><br />
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, vitae facilis voluptate rem. Sapiente illo beatae quam eveniet quo ipsum tempora, commodi esse ex iusto mollitia, nisi quod repellat magnam dicta laborum ratione illum molestias labore voluptatibus, ea, similique quibusdam nihil! Eaque, nulla quam ipsa. Eum exercitationem excepturi nihil quos alias qui rem recusandae voluptatum minima. Sit possimus, beatae veniam suscipit ratione illum enim expedita nam eos distinctio minima itaque soluta, perspiciatis nostrum necessitatibus asperiores maxime fugit accusamus, voluptate veritatis id dolorum earum obcaecati voluptatibus harum. Corporis harum, perspiciatis voluptates, iusto aperiam velit voluptate officia numquam reiciendis alias cupiditate perferendis.
+        </p>
     </div>
-</div>
-
-<div class="container-fluid" style="padding: 2% 85px">
-    <div class="row">
-        <div class="col">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nesciunt dicta commodi error velit beatae reprehenderit cumque placeat atque, illo alias, in soluta repellendus quis voluptas modi numquam id ex rem sit expedita dolores. Velit sequi maiores voluptas perferendis perspiciatis, minima molestias aliquid ut, fugit ratione porro vero laborum sed, molestiae tempora qui nostrum, nam fugiat quos doloremque quibusdam distinctio. Eaque optio magnam, velit modi, fugit eveniet dolor quibusdam repellat. Nesciunt quam ipsum, magni ullam? Earum deleniti eaque eveniet ab sequi delectus, molestiae odio voluptatem voluptatibus eius sapiente numquam nemo, tempora! Autem rerum ducimus quibusdam beatae corrupti, voluptatum, doloribus consectetur.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, possimus, doloribus! Illum velit magni deleniti eveniet harum veritatis totam enim explicabo voluptatibus molestias animi iure minus doloribus omnis distinctio doloremque perspiciatis repudiandae labore optio error esse hic sequi, dolore quos. Laudantium qui cum odio dolore eum. Itaque nisi consectetur unde minima numquam voluptate consequatur earum, eaque accusantium tenetur facere autem mollitia fugiat quod tempora modi, ab temporibus. At reiciendis voluptate modi, animi provident exercitationem nam voluptatibus fugiat, impedit, mollitia necessitatibus ipsam doloribus eligendi officiis sequi quibusdam earum libero nemo eaque. Nemo hic, eveniet, nobis cupiditate iure quia non molestias eius.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempora sit placeat facere corporis eos quam fugiat asperiores voluptatibus molestias, unde nam cupiditate recusandae deserunt neque, quasi iste quia quos delectus. Veniam, ab suscipit a sint dolorem illum quidem quaerat! Deserunt minus impedit fugit quae, at mollitia, libero vel maxime eligendi eveniet voluptatum unde, earum placeat dicta animi ipsa porro dolorem delectus expedita necessitatibus numquam eius nam cumque suscipit. Error nostrum est voluptate, reprehenderit obcaecati ad veniam atque quos tenetur nisi illo ducimus omnis quas quis. Vero blanditiis voluptatibus, esse, laborum facere, facilis qui, possimus magni eum reiciendis aliquid molestiae.
-            </p>
-            <br />
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2xGu1Dn_kW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <br /><br />
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, vitae facilis voluptate rem. Sapiente illo beatae quam eveniet quo ipsum tempora, commodi esse ex iusto mollitia, nisi quod repellat magnam dicta laborum ratione illum molestias labore voluptatibus, ea, similique quibusdam nihil! Eaque, nulla quam ipsa. Eum exercitationem excepturi nihil quos alias qui rem recusandae voluptatum minima. Sit possimus, beatae veniam suscipit ratione illum enim expedita nam eos distinctio minima itaque soluta, perspiciatis nostrum necessitatibus asperiores maxime fugit accusamus, voluptate veritatis id dolorum earum obcaecati voluptatibus harum. Corporis harum, perspiciatis voluptates, iusto aperiam velit voluptate officia numquam reiciendis alias cupiditate perferendis.
-            </p>
-        </div>
-        <div class="col-3">
-            <div class="list-group">
-                <a href="/about" class="list-group-item list-group-item-action bg-secondary text-light">About Instru</a>
-                <a href="#" class="list-group-item list-group-item-action">Principal Investigators</a>
-                <a href="#" class="list-group-item list-group-item-action">History</a>
-                <a href="#" class="list-group-item list-group-item-action">Awards and Recognition</a>
-                <a href="#" class="list-group-item list-group-item-action">Visiting IPL</a>
-            </div>
-            <hr />
-            <h5>Contact Us</h5>
-            <p>
-                +63 2 981 8500 loc. 3701-03<br />
-                <a href="mailto:csaloma@nip.upd.edu.ph">csaloma@nip.upd.edu.ph</a>
-            </p>
-            <hr style="border-width: 5px; border-color: rgba(0, 0, 0, 0.5)" />
-            <h5>Related References</h5>
-            <a href="https://our.upd.edu.ph/files/calendar/regular/ACAD%20CAL%202019-2020.pdf">UP Diliman Calendar AY 2019-2020</a><hr />
-            <a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxpbnN0cnVtZW50YXRpb25waHlzaWNzbGFifGd4OjIwNWVhZDExNzQwNDhhMGY">IPL Annual Report 2013</a><hr />
-            <a href="https://our.upd.edu.ph/files/catalogue/CS.pdf#page=8">BS Physics Course Curriculum</a><hr />
-            <a href="https://our.upd.edu.ph/files/catalogue/CS.pdf#page=10">BS Applied Physics (Instrumentation) Course Curriculum</a><hr />
-            <a href="https://our.upd.edu.ph/acadcat.php">UP Diliman General Catalogue 2014</a><hr />
-            <a href="https://our.upd.edu.ph/acadinf.php">UP Diliman Academic Information</a>
-        </div>
+    <div class="col-3">
+        {% include "about_sidebar.html" %}
     </div>
 </div>
 

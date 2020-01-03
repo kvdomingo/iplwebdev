@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block title %}
+	Home
+{% endblock %}
+
 {% block body %}
 
 <!-- Slider -->
@@ -28,9 +32,9 @@
 					</div>
 					<div class="col my-auto">
 						{% if loop.index < 10 %}
-							{% include "content/0" + loop.index|string + "-home.html" %}
+							{% include "content/home/0" + loop.index|string + "-home.html" %}
 						{% else %}
-							{% include "content/" + loop.index|string + "-home.html" %}
+							{% include "content/home/" + loop.index|string + "-home.html" %}
 						{% endif %}
 					</div>
 				</div>
@@ -84,19 +88,23 @@
 	<div class="row">
         <div class="col">
             <h3>Seminar</h3>
-        	<h5><a href="http://dx.doi.org/10.1016/j.patcog.2019.107051">Learning Image Compressed Sensing with Sub-Pixel Convolutional Generative Adversarial Networks</a></h5>
+        	<h5><a href="http://dx.doi.org/10.1016/j.patcog.2019.107051" target="_blank">Learning Image Compressed Sensing with Sub-Pixel Convolutional Generative Adversarial Networks</a></h5>
 			<p class="text-secondary">2 December 2019 | 2:00 PM | NIP LP101</p>
 			<hr />
-        	<h5><a href="http://ieeexplore.ieee.org/document/5720310/">Anti-Forensics of Image Compression</a></h5>
+        	<h5><a href="http://ieeexplore.ieee.org/document/5720310/" target="_blank">Anti-Forensics of Image Compression</a></h5>
 			<p class="text-secondary">2 December 2019 | 2:20 PM | NIP LP101</p>
 			<hr />
-        	<h5><a href="http://arxiv.org/abs/math/0503066v2">Stable Signal Recovery from Incomplete and Inaccurate Measurements</a></h5>
+        	<h5><a href="http://arxiv.org/abs/math/0503066v2" target="_blank">Stable Signal Recovery from Incomplete and Inaccurate Measurements</a></h5>
 			<p class="text-secondary">2 December 2019 | 2:40 PM | NIP LP101</p>
         </div>
 		<div class="col">
 			<h3>Recent Publications</h3>
 			{% for pub in recent_publ %}
-					{{ pub.authors }}. <a href="{{ pub.url }}">{{ pub.title }}</a>. <i>{{ pub.journal }} <b>{{ pub.volume }}</b></i>. ({{ pub.year }}).<hr />
+					<h5><a href="{{ pub.url }}" target="_blank">{{ pub.title }}</a></h5>
+					<p class="text-secondary">
+						{{ pub.authors }} | <i>{{ pub.journal }} <b>{{ pub.volume }}</b></i>
+					</p>
+					<hr />
 			{% endfor %}
 			<a href="/publications">See more...</a>
 		</div>

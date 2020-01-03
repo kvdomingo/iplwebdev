@@ -1,0 +1,46 @@
+{% extends "offhome_layout.html" %}
+{% set active_page = 'principals' %}
+
+{% block title %}
+    Principal Investigators
+{% endblock %}
+
+{% block heading %}
+    Principal Investigators
+{% endblock %}
+
+{% block content %}
+
+<h3 class="text-secondary">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate voluptate animi, iusto rem at hic magni. Quod placeat rem, velit!
+</h3>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt cum odit et, earum itaque laborum veniam, possimus fuga error rem minus, reiciendis fugit molestias, tenetur at unde repellendus ex nisi natus nihil quasi. Perspiciatis minus necessitatibus, enim maxime nostrum magnam voluptatem laudantium. Asperiores modi minima ut, earum iusto, aliquid consectetur.
+</p><br />
+
+<div class="row">
+    <div class="col">
+        {% for name, surname, txt in summary %}
+            <div class="row">
+                <div class="col-3">
+                    <a href="#{{ surname }}"><img class="img-fluid" src="images/{{ surname }}.jpg" style="height: 100%" /></a>
+                </div>
+                <div class="col">
+                    <h4><a href="#{{ surname }}">{{ name }}</a></h4>
+                    {% if surname == "Saloma" %}
+                        <p class="text-secondary">Laboratory Coordinator</p>
+                    {% endif %}
+                    {% include "content/principals/" + txt %}
+                </div>
+            </div>
+            {% if loop.index < 5 %}
+                <hr />
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col-3">
+        {% include "about_sidebar.html" %}
+    </div>
+</div>
+
+{% endblock %}

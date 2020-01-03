@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+    .jumbotron-cover {
+        background: url('images/ipl grp.jpg') no-repeat center center fixed;
+        background-size: cover;
+        height: 400px;
+    }
+</style>
+
+<div class="jumbotron jumbotron-cover" style="position: relative">
+    <div class="col-6 text-white" style="background-color: rgba(0, 0, 0, 0.6); position: absolute; bottom: 0; padding: 50px 20px; margin: 0 50px">
+        <div class="align-text-bottom h-100 justify-content-end">
+            <h5>INSTRUMENTATION PHYSICS LABORATORY</h5>
+            <h1>{% block heading %}{% endblock %}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="padding: 2% 85px">
+    {% block content %}{% endblock %}
+</div>
+
+{% endblock %}

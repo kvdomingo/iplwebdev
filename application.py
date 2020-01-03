@@ -2,7 +2,6 @@ import os
 from datetime import datetime
 from flask import Flask, render_template
 from sqlalchemy import create_engine, exc
-# from sqlalchemy.orm import scoped_session, sessionmaker
 
 app = Flask(__name__,
             static_url_path="",
@@ -15,7 +14,6 @@ try:
     dbpass = "16431879199842"
     dbname = "postgres"
     db = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
-    # db = scoped_session(sessionmaker(bind=engine))
     res = db.execute("SELECT * FROM spp")
     print("Using local db")
 except exc.OperationalError:
@@ -24,17 +22,23 @@ except exc.OperationalError:
     dbpass = "6a666281fe79f531447f30f4b82c0d4faf7adb8fd4dd649bbca920bbd6a27384"
     dbname = "d26ufums94l5nf"
     db = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
-    # db = scoped_session(sessionmaker(bind=engine))
     res = db.execute("SELECT * FROM spp")
     print("Using Heroku db")
 
+this_year = datetime.now().year
+
+
+@app.context_processor
+def inject_now():
+    return {"now": datetime.now()}
+
+
 @app.route("/")
 def index():
-    this_year = datetime.now().year
-    slider_files = os.listdir("web/templates/content")
+    slider_files = os.listdir("web/templates/content/home")
     adviser_names = ["Saloma", "Soriano", "Lim", "Tapang", "Bantang"]
     adviser_pics = [f"images/{f}.jpg" for f in adviser_names]
-    recent_publ = db.execute("SELECT * FROM regular WHERE year = 2019 LIMIT 3;").fetchall()
+    recent_publ = db.execute("SELECT * FROM regular WHERE year = 2019 AND volume IS NOT NULL AND authors != 'C Saloma' ORDER BY month DESC LIMIT 3;").fetchall()
     carousel_pics = ["IPL Text.png", "National_Institute_of_Physics_logo.png",
                     "ipl grp.jpg", "Saloma.jpg",
                     "Soriano.jpg", "Lim.jpg",
@@ -44,7 +48,6 @@ def index():
                     "videoimgproc.png", "bio.png",
                     "optics.png"]
     return render_template("index.html",
-                            this_year=this_year,
                             adviser_names=adviser_names,
                             slider_files=slider_files,
                             adviser_pics=adviser_pics,
@@ -56,6 +59,15 @@ def index():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+
+@app.route("/principal-investigators")
+def principals():
+    adviser_names = ["Caesar A. Saloma", "Maricor N. Soriano", "May T. Lim", "Giovanni A. Tapang", "Johnrob Y. Bantang"]
+    adviser_surnames = [n.split(" ")[-1] for n in adviser_names]
+    summary_files = os.listdir("web/templates/content/principals")
+    return render_template("principals.html",
+                            summary=zip(adviser_names, adviser_surnames, summary_files))
 
 
 @app.route("/publications")
@@ -77,3 +89,8 @@ def publications():
                             reg_years=reg_years,
                             spp=spp,
                             spp_years=spp_years)
+
+
+@app.route("/research")
+def research():
+    return render_template("research.html")
