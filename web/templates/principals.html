@@ -20,7 +20,7 @@
 
 <div class="row">
     <div class="col">
-        {% for name, surname, txt in summary %}
+        {% for name, surname in summary %}
             <div class="row">
                 <div class="col-3">
                     <a href="#{{ surname }}"><img class="img-fluid" src="images/{{ surname }}.jpg" style="height: 100%" /></a>
@@ -30,7 +30,7 @@
                     {% if surname == "Saloma" %}
                         <p class="text-secondary">Laboratory Coordinator</p>
                     {% endif %}
-                    {% include "content/principals/" + txt %}
+                    {% include "content/principals/0" + loop.index|string + "-pi.html" %}
                 </div>
             </div>
             {% if loop.index < 5 %}

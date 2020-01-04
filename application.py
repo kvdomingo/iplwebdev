@@ -42,9 +42,8 @@ def about():
 def principals():
     adviser_names = ["Caesar A. Saloma", "Maricor N. Soriano", "May T. Lim", "Giovanni A. Tapang", "Johnrob Y. Bantang"]
     adviser_surnames = [n.split(" ")[-1] for n in adviser_names]
-    summary_files = os.listdir("web/templates/content/principals")
     return render_template("principals.html",
-                            summary=zip(adviser_names, adviser_surnames, summary_files))
+                            summary=zip(adviser_names, adviser_surnames))
 
 
 @app.route("/publications")
@@ -57,8 +56,6 @@ def publications():
         res = Publication.query.filter(Publication.pub_type == "reg").filter(Publication.year == y).all()
         regular.append(res)
     for y in spp_years:
-        # res = db.execute("SELECT * FROM spp WHERE year = %s;",
-        #                 str(y)).fetchall()
         res = Publication.query.filter(Publication.pub_type == "spp").filter(Publication.year == y).all()
         spp.append(res)
     return render_template("publications.html",
