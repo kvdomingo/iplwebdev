@@ -2,30 +2,7 @@ import os
 from datetime import datetime
 from flask import Flask, render_template
 from sqlalchemy import create_engine, exc
-
-app = Flask(__name__,
-            static_url_path="",
-            static_folder="web/static",
-            template_folder="web/templates")
-
-try:
-    serverhost = "localhost"
-    dbusername = "postgres"
-    dbpass = "16431879199842"
-    dbname = "postgres"
-    db = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
-    res = db.execute("SELECT * FROM spp")
-    print("Using local db")
-except exc.OperationalError:
-    serverhost = "ec2-107-22-216-123.compute-1.amazonaws.com"
-    dbusername = "nsrmkjoiqfjjsp"
-    dbpass = "6a666281fe79f531447f30f4b82c0d4faf7adb8fd4dd649bbca920bbd6a27384"
-    dbname = "d26ufums94l5nf"
-    db = create_engine(f"postgresql://{dbusername}:{dbpass}@{serverhost}/{dbname}")
-    res = db.execute("SELECT * FROM spp")
-    print("Using Heroku db")
-
-this_year = datetime.now().year
+from manage import *
 
 
 @app.context_processor
@@ -38,7 +15,7 @@ def index():
     slider_files = os.listdir("web/templates/content/home")
     adviser_names = ["Saloma", "Soriano", "Lim", "Tapang", "Bantang"]
     adviser_pics = [f"images/{f}.jpg" for f in adviser_names]
-    recent_publ = db.execute("SELECT * FROM regular WHERE year = 2019 AND volume IS NOT NULL AND authors != 'C Saloma' ORDER BY month DESC LIMIT 3;").fetchall()
+    recent_publ = Publication.query.filter(Publication.year == 2019).filter(Publication.pub_type != "spp").filter(Publication.volume is not None).filter(Publication.authors != "C Saloma").order_by(Publication.month.desc()).limit(3).all()
     carousel_pics = ["IPL Text.png", "National_Institute_of_Physics_logo.png",
                     "ipl grp.jpg", "Saloma.jpg",
                     "Soriano.jpg", "Lim.jpg",
@@ -77,12 +54,12 @@ def publications():
     regular = []
     spp = []
     for y in reg_years:
-        res = db.execute("SELECT * FROM regular WHERE year = %s;",
-                        (y)).fetchall()
+        res = Publication.query.filter(Publication.pub_type == "reg").filter(Publication.year == y).all()
         regular.append(res)
     for y in spp_years:
-        res = db.execute("SELECT * FROM spp WHERE year = %s;",
-                        str(y)).fetchall()
+        # res = db.execute("SELECT * FROM spp WHERE year = %s;",
+        #                 str(y)).fetchall()
+        res = Publication.query.filter(Publication.pub_type == "spp").filter(Publication.year == y).all()
         spp.append(res)
     return render_template("publications.html",
                             regular=regular,
@@ -94,3 +71,7 @@ def publications():
 @app.route("/research")
 def research():
     return render_template("research.html")
+
+
+if __name__ == "__main__":
+    app.run()

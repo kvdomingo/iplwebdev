@@ -49,12 +49,8 @@
     								<td>{{ pub.title }}</td>
     								<td>{{ pub.journal }}</td>
     								<td>{{ pub.volume }}</td>
-    								<td>{{ pub.month }} {{ pub.year }}</td>
-                                {% if pub.url|length > 0 %}
-    								<td><a href="{{ pub.url }}" class="btn btn-success" style="border-radius: 30px" role="button" target="_blank">Read</a></td>
-    							{% else %}
-    								<td><a href="{{ pub.url }}" class="btn btn-success disabled" style="border-radius: 30px" role="button" target="_blank">Read</a></td>
-                                {% endif %}
+    								<td>{{ pub.year }}</td>
+    								<td><a href="{{ pub.url }}" class="btn btn-success {{ 'disabled' if pub.url == None }}" style="border-radius: 30px" role="button" target="_blank">Read</a></td>
                                 </tr>
                             {% endfor %}
                         </tbody>

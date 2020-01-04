@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    web:
+        build: .
+        command: python application.py
+        volumes:
+            - .:/usr/src/iplwebdev
+        ports:
+            - "5000:5000"
