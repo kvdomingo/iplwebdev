@@ -1,4 +1,4 @@
-{% extends "offhome_layout.html" %}
+{% extends "offhome_layout.html.j2" %}
 {% set active_page = 'research' %}
 
 {% block title %}
@@ -33,7 +33,7 @@
         <br />
     </div>
     <div class="col-3">
-        {% include "research_sidebar.html" %}
+        {% include "research_sidebar.html.j2" %}
     </div>
 </div>
 

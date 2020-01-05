@@ -24,6 +24,7 @@ class Publication(TimestampMixin, db.Model):
     page_end = db.Column(db.Integer)
     url = db.Column(db.String)
     doi = db.Column(db.String)
+    remarks = db.Column(db.String)
 
     def __repr__(self):
         return f"<Publication: {self.authors}. ({self.year}). {self.title}. {self.journal} {self.volume}.>"

@@ -1,6 +1,7 @@
 import os
+from calendar import month_name
 from datetime import datetime
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from sqlalchemy import create_engine, exc
 from manage import *
 
@@ -8,6 +9,12 @@ from manage import *
 @app.context_processor
 def inject_now():
     return {"now": datetime.now()}
+
+
+@app.context_processor
+def inject_month():
+    month_list = [m for m in month_name]
+    return {"month_list": month_list}
 
 
 @app.route("/")
@@ -24,7 +31,7 @@ def index():
     research_pics = ["signalproc.png", "cxsystems.png",
                     "videoimgproc.png", "bio.png",
                     "optics.png"]
-    return render_template("index.html",
+    return render_template("index.html.j2",
                             adviser_names=adviser_names,
                             slider_files=slider_files,
                             adviser_pics=adviser_pics,
@@ -35,14 +42,14 @@ def index():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html.j2")
 
 
 @app.route("/principal-investigators")
 def principals():
     adviser_names = ["Caesar A. Saloma", "Maricor N. Soriano", "May T. Lim", "Giovanni A. Tapang", "Johnrob Y. Bantang"]
     adviser_surnames = [n.split(" ")[-1] for n in adviser_names]
-    return render_template("principals.html",
+    return render_template("principals.html.j2",
                             summary=zip(adviser_names, adviser_surnames))
 
 
@@ -58,7 +65,7 @@ def publications():
     for y in spp_years:
         res = Publication.query.filter(Publication.pub_type == "spp").filter(Publication.year == y).all()
         spp.append(res)
-    return render_template("publications.html",
+    return render_template("publications.html.j2",
                             regular=regular,
                             reg_years=reg_years,
                             spp=spp,
@@ -67,7 +74,35 @@ def publications():
 
 @app.route("/research")
 def research():
-    return render_template("research.html")
+    return render_template("research.html.j2")
+
+
+@app.route("/report-publication")
+def add_publication():
+    return render_template("add_publication.html.j2")
+
+
+@app.route("/success", methods=["POST"])
+def success():
+    key, val = [], []
+    form_items = {}
+    submitter_name = "Submitted by: "
+    submitter_email = ".\nContact: "
+    for k, v in request.form.items():
+        if v == "":
+            v = None
+        if k == "submitter_name":
+            submitter_name += v
+            continue
+        if k == "submitter_email":
+            submitter_email += v
+            continue
+        form_items[k] = v
+    form_items["pub_type"] = "reg"
+    form_items["remarks"] = submitter_name + submitter_email + "."
+    db.session.add(Publication(**form_items))
+    db.session.commit()
+    return redirect(url_for('add_publication'))
 
 
 if __name__ == "__main__":

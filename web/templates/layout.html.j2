@@ -35,35 +35,35 @@
     		</button>
     		<div class="collapse navbar-collapse" id="instru-navbar">
     			<ul class="nav navbar-nav ml-auto">
-    				<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+    				<li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">HOME</a></li>
     				<li class="dropdown nav-item">
-                        <a class="nav-link" href="/about">ABOUT</a>
+                        <a class="nav-link" href="{{ url_for('about') }}">ABOUT</a>
                         <ul class="dropdown-menu dropdown-menu-right" style="margin-top: 0">
-                            <a class="dropdown-item" href="/principal-investigators">Principal Investigators</a>
-                            <a class="dropdown-item" href="#about-history">History</a>
-                            <a class="dropdown-item" href="#about-awards">Awards &amp; Recognition</a>
+                            <a class="dropdown-item" href="{{ url_for('principals') }}">Principal Investigators</a>
+                            <a class="dropdown-item" href="#">History</a>
+                            <a class="dropdown-item" href="#">Awards &amp; Recognition</a>
                         </ul>
                     </li>
     				<li class="dropdown nav-item">
-    					<a class="nav-link" href="/research">RESEARCH</a>
+    					<a class="nav-link" href="{{ url_for('research') }}">RESEARCH</a>
     					<ul class="dropdown-menu dropdown-menu-right" style="margin-top: 0">
-    						<a class="dropdown-item" href="/research/team-one">Team One</a>
-    						<a class="dropdown-item" href="/research/sync-biooptics">Synchronization &amp; BioOptics</a>
-    						<a class="dropdown-item" href="/research/vip">Video and Image Processing</a>
-    						<a class="dropdown-item" href="/research/complexity-science">Complexity Science Group</a>
-    						<a class="dropdown-item" href="/research/cx-team">CX Team</a>
+    						<a class="dropdown-item" href="#">Team One</a>
+    						<a class="dropdown-item" href="#">Synchronization &amp; BioOptics</a>
+    						<a class="dropdown-item" href="#">Video and Image Processing</a>
+    						<a class="dropdown-item" href="#">Complexity Science Group</a>
+    						<a class="dropdown-item" href="#">CX Team</a>
     					</ul>
     				</li>
-    				<li class="nav-item"><a class="nav-link" href="/publications">PUBLICATIONS</a></li>
+    				<li class="nav-item"><a class="nav-link" href="{{ url_for('publications') }}">PUBLICATIONS</a></li>
     				<li class="dropdown nav-item">
-                        <a class="nav-link" href="#members" data-toggle="dropdown" role="button" aria-expand="false">MEMBERS</a>
+                        <a class="nav-link" href="#" data-toggle="dropdown" role="button" aria-expand="false">MEMBERS</a>
                         <ul class="dropdown-menu dropdown-menu-right" style="margin-top: 0">
-    						<a class="dropdown-item" href="#phd">PhD Faculty</a>
-    						<a class="dropdown-item" href="#grad">Graduate Students</a>
-    						<a class="dropdown-item" href="#ugrad">Undergraduate Students</a>
+    						<a class="dropdown-item" href="#">PhD Faculty</a>
+    						<a class="dropdown-item" href="#">Graduate Students</a>
+    						<a class="dropdown-item" href="#">Undergraduate Students</a>
     					</ul>
                     </li>
-    				<li class="nav-item"><a class="nav-link" href="#join">JOIN</a></li>
+    				<li class="nav-item"><a class="nav-link" href="#">JOIN</a></li>
     			</ul>
     		</div>
     	</div>
@@ -83,7 +83,8 @@
                 <a href="https://docs.google.com/forms/d/1fbLDj27YFPcf5ZMxjLHOOq9YeXzLAyCsjW_rOV2hWQk/viewform" target="
                 ">Excuse Form</a><br />
                 <a href="https://docs.google.com/forms/d/1bGmMcnAu04fY1VjQrcH_tr-pOCju5X9fpLCO0ytdJ-k/viewform" target="_blank">Report an Achievement</a><br />
-                <a href="https://docs.google.com/a/nip.upd.edu.ph/forms/d/1K4Xp9TDGnR_FNwYNtcHA53IFYFVNO9mWx5XMCeWIiEo/viewform" target="_blank">Report a Publication Acceptance</a>
+                <!-- <a href="https://docs.google.com/a/nip.upd.edu.ph/forms/d/1K4Xp9TDGnR_FNwYNtcHA53IFYFVNO9mWx5XMCeWIiEo/viewform" target="_blank">Report a Publication Acceptance</a> -->
+                <a href="{{ url_for('add_publication') }}">Report a Publication Acceptance</a>
             </div>
             <div class="col">
                 <b>Instrumentation Physics Laboratory</b><br />

@@ -1,4 +1,4 @@
-{% extends "offhome_layout.html" %}
+{% extends "offhome_layout.html.j2" %}
 {% set active_page = 'principals' %}
 
 {% block title %}
@@ -11,15 +11,14 @@
 
 {% block content %}
 
-<h3 class="text-secondary">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate voluptate animi, iusto rem at hic magni. Quod placeat rem, velit!
-</h3>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt cum odit et, earum itaque laborum veniam, possimus fuga error rem minus, reiciendis fugit molestias, tenetur at unde repellendus ex nisi natus nihil quasi. Perspiciatis minus necessitatibus, enim maxime nostrum magnam voluptatem laudantium. Asperiores modi minima ut, earum iusto, aliquid consectetur.
-</p><br />
-
 <div class="row">
     <div class="col">
+        <h3 class="text-secondary">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate voluptate animi, iusto rem at hic magni. Quod placeat rem, velit!
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt cum odit et, earum itaque laborum veniam, possimus fuga error rem minus, reiciendis fugit molestias, tenetur at unde repellendus ex nisi natus nihil quasi. Perspiciatis minus necessitatibus, enim maxime nostrum magnam voluptatem laudantium. Asperiores modi minima ut, earum iusto, aliquid consectetur.
+        </p><br />
         {% for name, surname in summary %}
             <div class="row">
                 <div class="col-3">
@@ -39,7 +38,7 @@
         {% endfor %}
     </div>
     <div class="col-3">
-        {% include "about_sidebar.html" %}
+        {% include "about_sidebar.html.j2" %}
     </div>
 </div>
 

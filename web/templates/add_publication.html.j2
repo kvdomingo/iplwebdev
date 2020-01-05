@@ -1,0 +1,133 @@
+{% extends "offhome_layout.html.j2" %}
+
+{% block title %}
+    Report a Publication Acceptance
+{% endblock %}
+
+{% block heading %}
+    Report a Publication Acceptance
+{% endblock %}
+
+{% block content %}
+
+<script>
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
+    }, false);
+})();
+</script>
+
+
+<div class="row">
+    <div class="col">
+        <div class="container bg-light">
+            <h4 class="text-secondary">Report a publication acceptance here. Fields with an asterisk are required.</h4>
+            <form action="{{ url_for('success') }}", method="post" class="needs-validation">
+                <div class="form-group">
+                    <label for="authors">
+                        Author(s): <span class="text-danger">*</span><br />
+                    </label>
+                    <input type="text" class="form-control" placeholder="In SPP BibTeX format (Lastname1, Firstname1 and Lastname2, Firstname2 Secondname2 and ...)" id="authors" name="authors" required />
+                </div>
+                <div class="form-group">
+                    <label for="title">Title: <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control" placeholder="Your answer here" id="title" name="title" required />
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="journal">Journal: <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Your answer here" id="journal" name="journal" required />
+                        </div>
+                        <div class="col-2">
+                            <label for="volume">Volume: <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="volume" name="volume" required />
+                        </div>
+                        <div class="col-2">
+                            <label for="issue">Issue:</label>
+                            <input type="number" class="form-control" id="issue" name="issue" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="month">Month:</label>
+                            <select name="month" id="month" class="custom-select" name="month">
+                                {% for month in month_list %}
+                                        <option value="{{ month }}" {{ 'selected' if loop.index0 == 0 }}>
+                                            {{ month }}
+                                        </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="year">Year: <span class="text-danger">*</span></label>
+                            <select name="year" id="year" class="custom-select" name="year">
+                                {% for y in range(now.year, 2009, -1) %}
+                                        <option value="{{ y }}" {{ 'selected' if y == now.year }}>
+                                            {{ y }}
+                                        </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <label for="page_start">Start page:</label>
+                            <input type="number" class="form-control" id="page_start" name="page_start" />
+                        </div>
+                        <div class="col-2">
+                            <label for="page_end">End page:</label>
+                            <input type="number" class="form-control" id="page_end" name="page_end" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="url">Link: <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="url" name="url" placeholder="Your answer here" required />
+                        </div>
+                        <div class="col">
+                            <label for="doi">
+                                DOI: <span class="text-danger">*</span><br />
+                            </label>
+                            <input type="text" class="form-control" id="doi" name="doi" placeholder="Do not include the leading 'doi.org'" required />
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="submitter_name">
+                                Name of person answering this form: <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="submitter_name" name="submitter_name" placeholder="Your answer here" required />
+                        </div>
+                        <div class="col">
+                            <label for="submitter_email">
+                                Email: <span class="text-danger">*</span>
+                            </label>
+                            <input type="email" class="form-control" id="submitter_email" name="submitter_email" placeholder="Your answer here" required />
+                        </div>
+                    </div>
+                </div>
+                    <button type="submit" class="btn btn-success" style="border-radius: 5px">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

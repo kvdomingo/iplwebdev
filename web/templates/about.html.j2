@@ -1,4 +1,4 @@
-{% extends "offhome_layout.html" %}
+{% extends "offhome_layout.html.j2" %}
 {% set active_page = 'about' %}
 
 {% block title %}
@@ -30,7 +30,7 @@
         </p>
     </div>
     <div class="col-3">
-        {% include "about_sidebar.html" %}
+        {% include "about_sidebar.html.j2" %}
     </div>
 </div>
 
