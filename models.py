@@ -1,18 +1,16 @@
 from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
+from application import db
 
 
-db = SQLAlchemy()
-
-class TimestampMixin(object):
-    date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    last_updated = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+class TimestampMixin:
+    date_created = db.Column(db.DateTime, nullable=False, default=datetime.now)
+    last_updated = db.Column(db.DateTime, default=datetime.now, nullable=False, onupdate=datetime.now)
 
 
 class Publication(TimestampMixin, db.Model):
     __tablename__ = "publications"
     id = db.Column(db.Integer, primary_key=True)
-    pub_type = db.Column(db.String, nullable=False)
+    pub_type = db.Column(db.String(3), nullable=False)
     authors = db.Column(db.String, nullable=False)
     title = db.Column(db.String, nullable=False)
     journal = db.Column(db.String, nullable=False)

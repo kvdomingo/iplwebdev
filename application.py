@@ -1,9 +1,22 @@
 import os
+# from dotenv import load_dotenv
 from calendar import month_name
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for
-from sqlalchemy import create_engine, exc
-from manage import *
+from flask_sqlalchemy import SQLAlchemy
+
+
+# load_dotenv(os.path.join(".env"))
+
+app = Flask(__name__,
+            static_url_path="",
+            static_folder="web/static",
+            template_folder="web/templates")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ["DATABASE_URL"]
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+db = SQLAlchemy(app)
+from models import *
 
 
 @app.context_processor
@@ -86,20 +99,33 @@ def add_publication():
 def success():
     key, val = [], []
     form_items = {}
-    submitter_name = "Submitted by: "
-    submitter_email = ".\nContact: "
+    month_keys = [f for f in month_name]
+    month_values = [str(i) for i in range(len(month_keys))]
+    month_values[0] = None
     for k, v in request.form.items():
         if v == "":
             v = None
+        if k == "authors":
+            v = v.split(" and ")
+            v = [a.split(", ") for a in v]
+            auth = []
+            for i in range(len(v)):
+                if i == len(v) - 1:
+                    auth.append(f"and {v[i][1]} {v[i][0]}")
+                else:
+                    auth.append(f"{v[i][1]} {v[i][0]}")
+            v = ", ".join(auth)
         if k == "submitter_name":
-            submitter_name += v
+            submitter_name = v
             continue
         if k == "submitter_email":
-            submitter_email += v
+            submitter_email = v
             continue
         form_items[k] = v
+    month_dict = dict(zip(month_keys, month_values))
+    form_items["month"] = month_dict[form_items["month"]]
     form_items["pub_type"] = "reg"
-    form_items["remarks"] = submitter_name + submitter_email + "."
+    form_items["remarks"] = f"Submitted by: {submitter_name} via {url_for('add_publication')}\nContact: {submitter_email}."
     db.session.add(Publication(**form_items))
     db.session.commit()
     return redirect(url_for('add_publication'))
