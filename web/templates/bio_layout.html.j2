@@ -1,0 +1,55 @@
+{% extends "layout.html.j2" %}
+
+{% block body %}
+
+<div class="container-fluid" style="padding: 2% 85px">
+    <div class="row">
+        <div class="col-sm-3">
+            {% block portrait %}{% endblock %}<br /><br />
+            <h4 class="text-success" style="margin-bottom: 5px">{% block name %}{% endblock %}</h4>
+            <p class="text-secondary">{% block role %}{% endblock %}</p>
+            <hr style="border-width: 3px; border-color: rgba(0, 0, 0, 0.5)" />
+
+            <h5>ON THE WEB</h5>
+            <div class="row">
+                    {% block contact %}{% endblock %}
+            </div>
+            <hr style="border-width: 3px; border-color: rgba(0, 0, 0, 0.5)" />
+
+            <h5>RELATED REFERENCES</h5>
+            {% block related %}{% endblock %}
+
+        </div>
+        <div class="col">
+            <h5 class="text-success">Academic Positions</h5>
+            <ul class="list-group">
+                {% block academic %}{% endblock %}
+            </ul><br />
+
+            <h5 class="text-success">Administrative Positions</h5>
+            <ul class="list-group">
+                {% block administrative %}{% endblock %}
+            </ul><br />
+
+            <h5 class="text-success">Awards and Recognition</h5>
+            <ul class="list-group">
+                {% block awards %}{% endblock %}
+                <a href="#" class="list-group-item">See all...</a>
+            </ul><br />
+
+            <h5 class="text-success">Research Interests</h5>
+            <ul class="list-group">
+                {% block interests %}{% endblock %}
+            </ul><br />
+
+            <h5 class="text-success">Publications</h5>
+            <ul class="list-group">
+                {% block publications %}{% endblock %}
+                <a href="#" class="list-group-item">See all...</a>
+            </ul><br />
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

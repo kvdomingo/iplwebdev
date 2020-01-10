@@ -19,15 +19,35 @@
         <p>
             {{ lipsum(2) }}
         </p><br />
+        {% set nabbrev = ["csaloma", "msoriano", "mlim", "gtapang", "jbantang"] %}
         {% for name, surname in summary %}
             <div class="row">
                 <div class="col-3">
-                    <a href="#{{ surname }}"><img class="img-fluid" src="images/{{ surname }}.jpg" style="height: 100%" /></a>
+                    <a href="{{ url_for('principal_bio', principal=nabbrev[loop.index0]) }}"><img class="img-fluid" src="images/{{ surname }}.jpg" style="height: 100%" /></a>
                 </div>
                 <div class="col">
-                    <h4><a href="#{{ surname }}">{{ name }}</a></h4>
+                    <h4><a href="{{ url_for('principal_bio', principal=nabbrev[loop.index0]) }}">{{ name }}</a></h4>
                     {% if surname == "Saloma" %}
-                        <p class="text-secondary">Laboratory Coordinator</p>
+                        <p class="text-secondary">
+                            Laboratory Coordinator<br />
+                            Team One
+                        </p>
+                    {% elif surname == "Soriano" %}
+                        <p class="text-secondary">
+                            Video and Image Processing
+                        </p>
+                    {% elif surname == "Lim" %}
+                        <p class="text-secondary">
+                            Complex Systems Team
+                        </p>
+                    {% elif surname == "Tapang" %}
+                        <p class="text-secondary">
+                            Synchronization and BioOptics
+                        </p>
+                    {% else %}
+                        <p class="text-secondary">
+                            Complexity Science Group
+                        </p>
                     {% endif %}
                     {% include "content/principals/0" + loop.index|string + "-pi.html" %}
                 </div>

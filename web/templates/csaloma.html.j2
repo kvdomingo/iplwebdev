@@ -1,0 +1,78 @@
+{% extends "bio_layout.html.j2" %}
+
+{% block title %}
+    Caesar A. Saloma
+{% endblock %}
+
+{% block portrait %}
+    <img class="img-fluid" src="{{ url_for('static', filename='images/' + image_src + '.jpg') }}" />
+{% endblock %}
+
+{% block name %}
+    Prof. Caesar A. Saloma
+{% endblock %}
+
+{% block role %}
+    Laboratory Head
+{% endblock %}
+
+{% block contact %}
+    <div class="col-1">
+        <i><span class="far fa-envelope"></span></i><br />
+        <i><span class="fab fa-wikipedia-w"></span></i><br />
+    </div>
+    <div class="col">
+        <a href="mailto:csaloma@nip.upd.edu.ph">csaloma@nip.upd.edu.ph</a><br />
+         <a href="https://en.wikipedia.org/wiki/Caesar_Saloma">Wikipedia</a>
+    </div>
+{% endblock %}
+
+{% block related %}
+    <a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxpbnN0cnVtZW50YXRpb25waHlzaWNzbGFifGd4OjU1NjdkOWQwZWE3MjIxYzM">UP Diliman Chancellor's Report, Prof. Caesar Saloma, Mar 2011 - Feb 2014</a><hr />
+    <a href="https://docs.google.com/file/d/0B7lsfnoUnhLtWkdMR0ZDSGM0dUE/edit">2014 Convocation Opening Remarks</a><hr />
+    <a href="https://docs.google.com/file/d/0B7lsfnoUnhLtcTNSRWVsRG5VWUk/edit">2014 Convocation Closing Remarks</a><hr />
+{% endblock %}
+
+{% block academic %}
+    <li class="list-group-item">Professor 12, National Institute of Physics (NIP)</li>
+    <li class="list-group-item">Academician, National Academy of Science and Technology - Philippines (NAST)</li>
+    <li class="list-group-item">Scientist III, University of the Philippines</li>
+{% endblock %}
+
+{% block administrative %}
+    <li class="list-group-item">
+        Chancellor, University of the Philippines Diliman (UPD)<br />
+        <small class="text-secondary">March 2011 - February 2014</small>
+    </li>
+    <li class="list-group-item">
+        Dean, College of Science (CS), UPD<br />
+        <small class="text-secondary">June 2006 - February 2011</small>
+    </li>
+    <li class="list-group-item">
+        Director, National Institute of Physics<br />
+        <small class="text-secondary">June 2000 - May 2006</small>
+    </li>
+{% endblock %}
+
+{% block awards %}
+    {% for award in awards %}
+        <li class="list-group-item">
+            {{ award }}
+        </li>
+    {% endfor %}
+{% endblock %}
+
+{% block interests %}
+    <li class="list-group-item">Confocal laser scanning microscopy</li>
+    <li class="list-group-item">Signal and image processing</li>
+    <li class="list-group-item">Neural networks</li>
+    <li class="list-group-item">Complex adaptive systems</li>
+{% endblock %}
+
+{% block publications %}
+    {% for publication in publications %}
+        <li class="list-group-item">
+            {{ publication }}
+        </li>
+    {% endfor %}
+{% endblock %}

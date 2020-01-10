@@ -71,10 +71,10 @@
 <div class="container-fluid" style="padding-top: 50px; padding-bottom: 50px">
 	<h3 class="text-center">Principal Investigators</h3>
 	<div class="card-deck">
-		{% set names = [("Dr. Caesar Saloma", "#saloma"), ("Dr. Maricor Soriano", "#soriano"), ("Dr. May Lim", "#lim"), ("Dr. Giovanni Tapang", "#tapang"), ("Dr. Johnrob Bantang", "#bantang")] %}
+		{% set names = [("Dr. Caesar Saloma", "csaloma"), ("Dr. Maricor Soriano", "msoriano"), ("Dr. May Lim", "mlim"), ("Dr. Giovanni Tapang", "gtapang"), ("Dr. Johnrob Bantang", "jbantang")] %}
 		{% for name, tag in names %}
 			<div class="card">
-				<a href="{{ tag }}" class="stretched-link"><img class="card-img" src="{{ adviser_pics[loop.index0] }}"></a>
+				<a href="{{ url_for('principal_bio', principal=tag) }}" class="stretched-link"><img class="card-img" src="{{ adviser_pics[loop.index0] }}"></a>
 				<div class="card-body text-center">
 					<p>{{ name }}</p>
 				</div>
@@ -84,7 +84,7 @@
 </div>
 
 <!-- Current affairs -->
-<div class="container-fluid" style="padding: 50px 3%">
+<div class="container-fluid" style="padding: 50px 30px">
 	<div class="row">
         <div class="col">
             <h3>Seminar</h3>

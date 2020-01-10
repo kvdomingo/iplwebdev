@@ -33,12 +33,24 @@
     <div class="col">
         <div class="container bg-light">
             <h4 class="text-secondary">Report a publication acceptance here. Fields with an asterisk are required.</h4>
-            <form action="{{ url_for('success') }}", method="post" class="needs-validation">
+            <form action="{{ url_for('add_publ_success') }}", method="post" class="needs-validation">
                 <div class="form-group">
                     <label for="authors">
                         Author(s): <span class="text-danger">*</span><br />
                     </label>
                     <input type="text" class="form-control" placeholder="In SPP BibTeX format (e.g. Einstein, Albert and Planck, Max Karl Ernst Ludwig and Dirac, Paul Adrien Maurice)" id="authors" name="authors" required />
+                </div>
+                <div class="form-group">
+                    <label for="subgroup">
+                        Subgroup: <span class="text-danger">*</span><br />
+                    </label>
+                    <select name="subgroup" id="subgroup" class="custom-select" required>
+                        {% for group in subgroups %}
+                                <option value="{{ group }}">
+                                    {{ group }}
+                                </option>
+                        {% endfor %}
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="title">Title: <span class="text-danger">*</span>

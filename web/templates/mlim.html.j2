@@ -1,0 +1,49 @@
+{% extends "bio_layout.html.j2" %}
+
+{% block title %}
+    May T. Lim
+{% endblock %}
+
+{% block portrait %}
+    <img class="img-fluid" src="{{ url_for('static', filename='images/' + image_src + '.jpg') }}" />
+{% endblock %}
+
+{% block name %}
+    Dr. May T. Lim
+{% endblock %}
+
+{% block contact %}
+    <div class="col-1">
+        <i><span class="far fa-envelope"></span></i><br />
+    </div>
+    <div class="col">
+        <a href="mailto:mlim@nip.upd.edu.ph">mlim@nip.upd.edu.ph</a>
+    </div>
+{% endblock %}
+
+{% block academic %}{% endblock %}
+
+{% block administrative %}{% endblock %}
+
+{% block awards %}
+    {% for award in awards %}
+        <li class="list-group-item">
+            {{ award }}
+        </li>
+    {% endfor %}
+{% endblock %}
+
+{% block interests %}
+    <li class="list-group-item">Computational statistical physics</li>
+    <li class="list-group-item">Monte Carlo methods</li>
+    <li class="list-group-item">Agent-based models</li>
+    <li class="list-group-item">Networks</li>
+{% endblock %}
+
+{% block publications %}
+    {% for publication in publications %}
+        <li class="list-group-item">
+            {{ publication }}
+        </li>
+    {% endfor %}
+{% endblock %}

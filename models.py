@@ -22,10 +22,27 @@ class Publication(TimestampMixin, db.Model):
     page_end = db.Column(db.Integer)
     url = db.Column(db.String)
     doi = db.Column(db.String)
+    subgroup = db.Column(db.String(3), nullable=False)
     remarks = db.Column(db.String)
 
     def __repr__(self):
-        return f"<Publication: {self.authors}. ({self.year}). {self.title}. {self.journal} {self.volume}.>"
+        return f"<Publication: {self.authors}. ({self.year}). {self.title}. {self.journal} {self.volume}>"
 
     def __str__(self):
-        return f"{self.authors}. {self.title}. <a href='{self.url}' target='_blank'><i>{self.journal} <b>{self.volume}</b></i></a>({self.issue}). ({self.year})"
+        return f"{self.authors}. {self.title}. <a href='{self.url}' target='_blank'><i>{self.journal} <b>{self.volume}</b></i></a>. ({self.year})"
+
+
+class Award(TimestampMixin, db.Model):
+    __tablename__ = "awards"
+    id = db.Column(db.Integer, primary_key=True)
+    awardee = db.Column(db.String, nullable=False)
+    award = db.Column(db.String, nullable=False)
+    awarding_body = db.Column(db.String, nullable=False)
+    year = db.Column(db.Integer, nullable=False)
+    url = db.Column(db.String)
+
+    def __repr__(self):
+        return f"<Award: {self.awardee}, {self.award}, {self.year}>"
+
+    def __str__(self):
+        return f"{self.award}<br /><small class='text-secondary'>{self.awarding_body}, {self.year}</small>"

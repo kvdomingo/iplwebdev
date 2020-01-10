@@ -1,12 +1,12 @@
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 from calendar import month_name
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 
-# load_dotenv(os.path.join(".env"))
+load_dotenv(os.path.join(".env"))
 
 app = Flask(__name__,
             static_url_path="",
@@ -35,7 +35,13 @@ def index():
     slider_files = os.listdir("web/templates/content/home")
     adviser_names = ["Saloma", "Soriano", "Lim", "Tapang", "Bantang"]
     adviser_pics = [f"images/{f}.jpg" for f in adviser_names]
-    recent_publ = Publication.query.filter(Publication.year == 2019).filter(Publication.pub_type != "spp").filter(Publication.volume is not None).filter(Publication.authors != "C Saloma").order_by(Publication.month.desc()).limit(3).all()
+    recent_publ = Publication.query.filter(Publication.year == 2019) \
+                                    .filter(Publication.pub_type != "spp") \
+                                    .filter(Publication.volume != None) \
+                                    .filter(Publication.authors != "C Saloma") \
+                                    .order_by(Publication.month.desc()) \
+                                    .limit(3) \
+                                    .all()
     carousel_pics = ["IPL Text.png", "National_Institute_of_Physics_logo.png",
                     "ipl grp.jpg", "Saloma.jpg",
                     "Soriano.jpg", "Lim.jpg",
@@ -66,6 +72,26 @@ def principals():
                             summary=zip(adviser_names, adviser_surnames))
 
 
+@app.route("/profile/<string:principal>")
+def principal_bio(principal):
+    awards = Award.query.filter(Award.awardee.contains(principal[1:].capitalize())) \
+                        .order_by(Award.year.desc()) \
+                        .limit(5) \
+                        .all()
+    publications = Publication.query.filter(Publication.authors.contains(principal[1:].capitalize())) \
+                                    .filter(Publication.pub_type == "reg") \
+                                    .filter(Publication.url != None) \
+                                    .filter(Publication.volume != None) \
+                                    .order_by(Publication.year.desc()) \
+                                    .limit(5) \
+                                    .all()
+    return render_template(f"{principal}.html.j2",
+                            principal=principal,
+                            image_src=principal[1:],
+                            awards=awards,
+                            publications=publications)
+
+
 @app.route("/publications")
 def publications():
     reg_years = [2019, 2018, 2017]
@@ -73,10 +99,14 @@ def publications():
     regular = []
     spp = []
     for y in reg_years:
-        res = Publication.query.filter(Publication.pub_type == "reg").filter(Publication.year == y).all()
+        res = Publication.query.filter(Publication.pub_type == "reg") \
+                                .filter(Publication.year == y) \
+                                .all()
         regular.append(res)
     for y in spp_years:
-        res = Publication.query.filter(Publication.pub_type == "spp").filter(Publication.year == y).all()
+        res = Publication.query.filter(Publication.pub_type == "spp") \
+                                .filter(Publication.year == y) \
+                                .all()
         spp.append(res)
     return render_template("publications.html.j2",
                             regular=regular,
@@ -92,15 +122,20 @@ def research():
 
 @app.route("/report-publication")
 def add_publication():
-    return render_template("add_publication.html.j2")
+    subgroups = ["Select subgroup...", "Team One", "Synchronization & BioOptics", "Video & Image Processing", "Complexity Science Group", "CX Team"]
+    return render_template("add_publication.html.j2",
+                            subgroups=subgroups)
 
 
 @app.route("/success", methods=["POST"])
-def success():
+def add_publ_success():
     key, val = [], []
     form_items = {}
     month_keys = [f for f in month_name]
     month_values = [str(i) for i in range(len(month_keys))]
+    subgroups = ["Team One", "Synchronization & BioOptics", "Video & Image Processing", "Complexity Science Group", "CX Team"]
+    sub_abbrev = ["ITO", "SBO", "VIP", "CSG", "CXT"]
+    subg_dict = dict(zip(subgroups, sub_abbrev))
     month_values[0] = None
     for k, v in request.form.items():
         if v == "":
@@ -110,10 +145,10 @@ def success():
             v = [a.split(", ") for a in v]
             auth = []
             for i in range(len(v)):
-                if i == len(v) - 1:
-                    auth.append(f"and {v[i][1]} {v[i][0]}")
+                if len(v) > 1 and i + 1 == len(v):
+                    auth.append(f"and {v[i][1][0]} {v[i][0]}")
                 else:
-                    auth.append(f"{v[i][1]} {v[i][0]}")
+                    auth.append(f"{v[i][1][0]} {v[i][0]}")
             v = ", ".join(auth)
         if k == "submitter_name":
             submitter_name = v
@@ -122,13 +157,18 @@ def success():
             submitter_email = v
             continue
         form_items[k] = v
-    month_dict = dict(zip(month_keys, month_values))
-    form_items["month"] = month_dict[form_items["month"]]
+        if k == "subgroup":
+            v = subg_dict[v]
+    try:
+        month_dict = dict(zip(month_keys, month_values))
+        form_items["month"] = month_dict[form_items["month"]]
+    except KeyError:
+        pass
     form_items["pub_type"] = "reg"
     form_items["remarks"] = f"Submitted by: {submitter_name} via {url_for('add_publication')}\nContact: {submitter_email}."
     db.session.add(Publication(**form_items))
     db.session.commit()
-    return redirect(url_for('add_publication'))
+    return render_template("success.html.j2")
 
 
 if __name__ == "__main__":

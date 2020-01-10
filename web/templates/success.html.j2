@@ -1,0 +1,32 @@
+{% extends "offhome_layout.html.j2" %}
+
+{% block title %}
+    Success
+{% endblock %}
+
+{% block heading %}
+    Report a Publication Acceptance
+{% endblock %}
+
+{% block content %}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+            window.location.replace(window.location.origin + "/report-publication");
+        }, 5000);
+    });
+</script>
+
+
+<div class="row">
+    <div class="col">
+        <div class="container bg-light">
+            <h4 class="text-secondary">Success.</h4>
+            <p>
+                Your response has been recorded. Click <a href="{{ url_for('add_publication') }}">here</a> if the page does not redirect automatically within 5 seconds.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
