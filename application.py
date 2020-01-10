@@ -30,6 +30,11 @@ def inject_month():
     return {"month_list": month_list}
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html.j2"), 404
+
+
 @app.route("/")
 def index():
     slider_files = os.listdir("web/templates/content/home")
@@ -94,7 +99,7 @@ def principal_bio(principal):
 
 @app.route("/publications")
 def publications():
-    reg_years = [2019, 2018, 2017]
+    reg_years = [2019, 2018, 2017, 2016, 2015, 2014, 2013]
     spp_years = [2019]
     regular = []
     spp = []

@@ -21,7 +21,6 @@ class Publication(TimestampMixin, db.Model):
     page_start = db.Column(db.Integer)
     page_end = db.Column(db.Integer)
     url = db.Column(db.String)
-    doi = db.Column(db.String)
     subgroup = db.Column(db.String(3), nullable=False)
     remarks = db.Column(db.String)
 

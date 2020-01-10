@@ -1,8 +1,17 @@
 {% extends "layout.html.j2" %}
 
+{% block title %}
+    Publications
+{% endblock %}
+
+
 {% block body %}
 <script>
     $(document).ready(function() {
+        $("#t_pub2013").DataTable();
+        $("#t_pub2014").DataTable();
+        $("#t_pub2015").DataTable();
+        $("#t_pub2016").DataTable();
         $("#t_pub2017").DataTable();
         $("#t_pub2018").DataTable();
         $("#t_pub2019").DataTable();
@@ -14,32 +23,31 @@
 <div class="container-fluid" style="padding-top: 50px; padding-bottom: 50px">
 	<h3 class="text-center">Publications</h3>
 	<ul class="nav nav-tabs justify-content-center" role="tablist">
-		<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#pub2019">2019</a></li>
-		<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#pub2018">2018</a></li>
-		<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#pub2017">2017</a></li>
-		<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#spp2019">SPP 2019</a></li>
+        {% for y in reg_years %}
+                <li class="nav-item"><a class="nav-link {{ 'active' if loop.index0 == 0 }}" data-toggle="tab" href="#pub{{ y }}">{{ y }}</a></li>
+        {% endfor %}
+        {% for y in spp_years %}
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#spp{{ y }}">SPP {{ y }}</a></li>
+        {% endfor %}
 	</ul>
 
     <!-- Regular publications -->
 	<div class="tab-content">
 
         {% for pub_year in regular %}
-            {% if loop.index0 == 0 %}
-                <div id="pub{{ reg_years[loop.index0] }}" class="container-fluid tab-pane active">
-            {% else %}
-                <div id="pub{{ reg_years[loop.index0] }}" class="container-fluid tab-pane">
-            {% endif %}
-                <br />
-                <div class="table-responsive-xl">
+            <div id="pub{{ reg_years[loop.index0] }}" class="container-fluid tab-pane {{ 'active' if loop.index0 == 0 }} {{ 'fade' if loop.index0 != 0 }}">
+            <br />
+                <div class="table-responsive">
                     <table id="t_pub{{ reg_years[loop.index0] }}" class="table table-hover">
                         <thead class="thead-light">
                             <tr>
-                                <th class="col-sm-2">Author(s)</th>
-    							<th class="col-sm-5">Title</th>
-    							<th class="col-sm-2">Journal</th>
-    							<th class="col-sm-1">Vol. (No.): pp.</th>
-    							<th class="col-sm-1">Date</th>
-    							<th class="col-sm-1">Link</th>
+                                <th>Author(s)</th>
+    							<th>Title</th>
+    							<th>Journal</th>
+    							<th>Vol.</th>
+                                <th>Issue</th>
+    							<th>Date</th>
+    							<th>Link</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,8 +57,9 @@
     								<td>{{ pub.title }}</td>
     								<td>{{ pub.journal }}</td>
     								<td>{{ pub.volume }}</td>
+                                    <td>{{ pub.issue if pub.issue != None else '-' }}</td>
     								<td>{{ pub.year }}</td>
-    								<td><a href="{{ pub.url }}" class="btn btn-success {{ 'disabled' if pub.url == None }}" style="border-radius: 30px" role="button" target="_blank">Read</a></td>
+    								<td><a href="{{ pub.url }}" class="btn btn-success {{ 'disabled' if pub.url == None }}" style="border-radius: 5px" role="button" target="_blank">Read</a></td>
                                 </tr>
                             {% endfor %}
                         </tbody>
@@ -62,13 +71,13 @@
 		<!-- SPP -->
         {% for pub_year in spp %}
             <div id="spp{{ spp_years[loop.index0] }}" class="container-fluid tab-pane fade"><br />
-    			<div class="table-responsive-lg">
+    			<div class="table-responsive">
     				<table id="t_spp{{ spp_years[loop.index0] }}" class="table table-hover">
     					<thead class="thead-light">
     						<tr>
-    							<th class="col-sm-4">Author(s)</th>
+    							<th class="col">Author(s)</th>
     							<th class="col">Title</th>
-    							<th class="col-sm-1">Link</th>
+    							<th class="col">Link</th>
     						</tr>
     					</thead>
     					<tbody>
@@ -76,7 +85,7 @@
     							<tr>
     								<td class="col-sm-3">{{ pub.authors }}</td>
     								<td>{{ pub.title }}</td>
-    								<td class="col-sm-1"><a href="https://paperview.spp-online.org/proceedings/article/view/SPP-2019-{{ pub.spp_code }}" class="btn btn-success" style="border-radius: 30px" role="button" target="_blank">Read</a></td>
+    								<td class="col-sm-1"><a href="https://paperview.spp-online.org/proceedings/article/view/SPP-2019-{{ pub.spp_code }}" class="btn btn-success" style="border-radius: 5px" role="button" target="_blank">Read</a></td>
     						{% endfor %}
     					</tbody>
     				</table>
