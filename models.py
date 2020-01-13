@@ -45,3 +45,30 @@ class Award(TimestampMixin, db.Model):
 
     def __str__(self):
         return f"{self.award}<br /><small class='text-secondary'>{self.awarding_body}, {self.year}</small>"
+
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String)
+    last_name = db.Column(db.String)
+    username = db.Column(db.String, unique=True, nullable=False)
+    email = db.Column(db.String, nullable=False)
+    password = db.Column(db.String, nullable=False)
+
+    @property
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_active(self):
+        return True
+
+    @property
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return self.id
+
+    def __unicode__(self):
+        return self.username

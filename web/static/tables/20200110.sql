@@ -1,3 +1,7 @@
+DROP TABLE alembic_version;
+DROP TABLE awards;
+DROP TABLE publications;
+
 --
 -- PostgreSQL database dump
 --

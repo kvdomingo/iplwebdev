@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from calendar import month_name
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, json
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -79,6 +79,8 @@ def principals():
 
 @app.route("/profile/<string:principal>")
 def principal_bio(principal):
+    with open(f"web/static/content/profile/{principal}.json", encoding="utf-8") as f:
+        data = json.load(f)
     awards = Award.query.filter(Award.awardee.contains(principal[1:].capitalize())) \
                         .order_by(Award.year.desc()) \
                         .limit(5) \
@@ -90,9 +92,10 @@ def principal_bio(principal):
                                     .order_by(Publication.year.desc()) \
                                     .limit(5) \
                                     .all()
-    return render_template(f"{principal}.html.j2",
+    return render_template("profile.html.j2",
+                            data=data,
                             principal=principal,
-                            image_src=principal[1:],
+                            image_src=principal[1:].capitalize(),
                             awards=awards,
                             publications=publications)
 

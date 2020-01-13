@@ -20,12 +20,7 @@
 	<!-- Slideshow -->
 	<div class="carousel-inner container my-auto h-100" style="padding: 20pt" role="listbox">
 		{% for pic in carousel_pics %}
-			{% if loop.index0 == 0 %}
-				{% set divclass = "carousel-item active" %}
-			{% else %}
-				{% set divclass = "carousel-item" %}
-			{% endif %}
-			<div class="{{ divclass }}">
+			<div class="carousel-item {{ 'active' if loop.index0 == 0 }}">
 				<div class="row h-100" style="vertical-align: middle">
 					<div class="col-3">
 						<img class="img-fluid" src="images/{{ pic }}" />

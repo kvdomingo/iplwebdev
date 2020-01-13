@@ -1,0 +1,81 @@
+{% extends "layout.html.j2" %}
+
+{% block title %}
+    {{ data.fullName }}
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid" style="padding: 2% 85px">
+    <div class="row">
+        <div class="col-sm-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='images/' + image_src + '.jpg') }}" /><br /><br />
+            <h4 class="text-success" style="margin-bottom: 5px">{{ data.fullName }}</h4>
+            <p class="text-secondary">{{ data.role }}</p>
+            <hr style="border-width: 3px; border-color: rgba(0, 0, 0, 0.5)" />
+
+            <h5>CONTACT</h5>
+            <i style="margin-right: 10px"><span class="far fa-envelope"></span></i><a href="mailto:{{ data.contact[0].email }}">{{ data.contact[0].email }}</a><br />
+            <hr style="border-width: 3px; border-color: rgba(0, 0, 0, 0.5)" />
+
+            <h5>RELATED REFERENCES</h5>
+            {% for ref in data.references[::-1] %}
+                <a href="{{ ref.href }}" target="_blank">{{ ref.text }}</a><hr />
+            {% endfor %}
+        </div>
+        <div class="col">
+            <h5 class="text-success">Academic Positions</h5>
+            <ul class="list-group">
+                {% for acad in data.academic %}
+                    <li class="list-group-item">
+                        {{ acad.position }}, {{ acad.institution }}
+                    </li>
+                {% endfor %}
+            </ul><br />
+
+            <h5 class="text-success">Administrative Positions</h5>
+            <ul class="list-group">
+                {% for admin in data.administrative %}
+                    <li class="list-group-item">
+                        {{ admin.position }}, {{ admin.institution }}<br />
+                        <small class="text-secondary">{{ admin.duration }}</small>
+                    </li>
+                {% endfor %}
+
+            </ul><br />
+
+            <h5 class="text-success">Awards and Recognition</h5>
+            <ul class="list-group">
+                {% for award in awards %}
+                    <li class="list-group-item">
+                        {{ award }}
+                    </li>
+                {% endfor %}
+                <a href="#" class="list-group-item">See all...</a>
+            </ul><br />
+
+            <h5 class="text-success">Research Interests</h5>
+            <ul class="list-group">
+                {% for interest in data.interests %}
+                    <li class="list-group-item">
+                        {{ interest }}
+                    </li>
+                {% endfor %}
+
+            </ul><br />
+
+            <h5 class="text-success">Publications</h5>
+            <ul class="list-group">
+                {% for publication in publications %}
+                    <li class="list-group-item">
+                        {{ publication }}
+                    </li>
+                {% endfor %}
+                <a href="#" class="list-group-item">See all...</a>
+            </ul><br />
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
