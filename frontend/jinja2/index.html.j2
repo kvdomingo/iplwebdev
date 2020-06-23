@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+    {% if not settings.DEBUG and settings.ON_HEROKU %}
+        <meta name="author" content="Kenneth V. Domingo" />
+        <meta property="og:url" content="https://instrumentation.herokuapp.com" />
+        <meta property="og:site_name" content="Instrumentation Physics Laboratory" />
+        <meta property="og:title" content="Instrumentation Physics Laboratory" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_PH" />
+        <meta property="og:image" content="https://res.cloudinary.com/kdphotography-assets/image/upload/v1/ipl/IPL_Logo.png" />
+
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content="@officialinstru" />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:title" content="Instrumentation Physics Laboratory" />
+        <meta name="twitter:image:alt" content="Instrumentation Physics Laboratory" />
+
+        {% block head %}{% endblock %}
+    {% endif %}
+
+    <link rel="shortcut icon" href="https://res.cloudinary.com/kdphotography-assets/image/upload/v1/ipl/favicon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+<body>
+    <div id="root"></div>
+    {{ render_bundle('main') }}
+</body>
+</html>
