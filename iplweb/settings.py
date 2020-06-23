@@ -67,10 +67,10 @@ ROOT_URLCONF = 'iplweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.jinja2.Jinja2',
-        'DIRS': [f'{PROJECT_DIR}/jinjatemplates/'],
+        'DIRS': [f'{BASE_DIR}/jinjatemplates/'],
         'APP_DIRS': True,
         'OPTIONS': {
-            'environment': 'kvdomingo.jinja2.environment',
+            'environment': 'iplweb.jinja2.environment',
             'autoescape': False,
             'undefined': DebugUndefined if DEBUG else Undefined,
         },
