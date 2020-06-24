@@ -1,23 +1,24 @@
-import React from 'react';
-import { Image } from 'cloudinary-react';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AOS from 'aos';
+import Loading from './Loading';
+import Navbar from './Navbar';
+import Routes from './Routes';
 
 
-export default function App() {
-    return (
-        <div className='Container'>
-            <div className='App'>
-                <Image
-                    cloudName='kdphotography-assets'
-                    className='Logo'
-                    publicId='ipl/IPL_Logo'
-                    responsive
-                    responsiveUseBreakpoints
-                    width='auto'
-                    dpr='auto'
-                    crop='scale'
-                    />
-                <h1>Coming soon</h1>
-            </div>
-        </div>
-    );
+export default class App extends React.Component {
+    componentDidMount() {
+        AOS.init();
+    }
+
+    render() {
+        return (
+            <Router>
+                <Navbar />
+                <Suspense fallback={<Loading />}>
+                    {Routes}
+                </Suspense>
+            </Router>
+        );
+    }
 }

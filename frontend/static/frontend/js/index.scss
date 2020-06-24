@@ -1,0 +1,18 @@
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    font-size: 0.9rem;
+    @media (min-width: 576px) { font-size: 1rem }
+    @media (min-width: 768px) { font-size: 1.05rem }
+    @media (min-width: 992px) { font-size: 1.1rem }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.kill-shadow {
+    box-shadow: none;
+}
