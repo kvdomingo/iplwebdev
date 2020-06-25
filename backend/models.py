@@ -56,9 +56,9 @@ class Publication(models.Model):
 class Award(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
-    awardee = models.CharField(max_length=64)
-    award = models.CharField(max_length=64)
-    awarding_body = models.CharField(max_length=64)
+    awardee = models.CharField(max_length=255)
+    award = models.CharField(max_length=255)
+    awarding_body = models.CharField(max_length=255)
     year = models.IntegerField()
     url = models.URLField(max_length=255, blank=True)
 
