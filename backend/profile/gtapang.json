@@ -1,0 +1,29 @@
+{
+    "fullName": "Giovanni A. Tapang",
+    "contact": [
+        {"email": "gtapang@nip.upd.edu.ph"}
+    ],
+    "role": "",
+    "references": [],
+    "academic": [
+        {
+            "position": "Professor",
+            "institution": "National Institute of Physics"
+        }
+    ],
+    "administrative": [
+        {
+            "position": "Dean",
+            "institution": "UPD College of Science",
+            "duration": "October 2019 - present"
+        }
+    ],
+    "interests": [
+        "Biology and optics",
+        "Language networks",
+        "Complex systems",
+        "Science education",
+        "Instrumentation",
+        "Synchronization"
+    ]
+}

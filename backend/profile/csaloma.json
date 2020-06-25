@@ -1,0 +1,66 @@
+{
+    "fullName": "Caesar A. Saloma",
+    "contact": [
+        {"email": "csaloma@nip.upd.edu.ph"}
+    ],
+    "role": "Laboratory Coordinator",
+    "references": [
+        {
+            "href": "https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxpbnN0cnVtZW50YXRpb25waHlzaWNzbGFifGd4OjU1NjdkOWQwZWE3MjIxYzM",
+            "text": "UP Diliman Chancellor's Report, Prof. Caesar Saloma, Mar 2011 - Feb 2014"
+        },
+        {
+            "href": "https://docs.google.com/file/d/0B7lsfnoUnhLtWkdMR0ZDSGM0dUE",
+            "text": "2014 Convocation Opening Remarks"
+        },
+        {
+            "href": "https://docs.google.com/file/d/0B7lsfnoUnhLtcTNSRWVsRG5VWUk",
+            "text": "2014 Convocation Closing Remarks"
+        },
+        {
+            "href": "http://nip.upd.edu.ph/nip-faculty-members-among-the-40-awardees-of-the-u-p-scientific-productivity-system-u-p-sps/",
+            "text": "NIP Faculty members among the 40 awardees of the U.P. Scientific Productivity System (U.P. SPS)"
+        },
+        {
+            "href": "https://www.nytimes.com/2015/11/15/magazine/how-to-survive-a-stampede.html",
+            "text": "How to Survive a Stampede"
+        }
+    ],
+    "academic": [
+        {
+            "position": "Professor 12",
+            "institution": "National Institute of Physics"
+        },
+        {
+            "position": "Academician",
+            "institution": "National Academy of Science and Technology - Philippines"
+        },
+        {
+            "position": "Scientist III",
+            "institution": "University of the Philippines"
+        }
+    ],
+    "administrative": [
+        {
+            "position": "Chancellor",
+            "institution": "University of the Philippines Diliman (UPD)",
+            "duration": "March 2011 - February 2014"
+        },
+        {
+            "position": "Dean",
+            "institution": "UPD College of Science",
+            "duration": "June 2006 - February 2011"
+        },
+        {
+            "position": "Director",
+            "institution": "National Institute of Physics",
+            "duration": "June 2000 - May 2006"
+        }
+    ],
+    "interests": [
+        "Confocal laser scanning microscopy",
+        "Signal and image processing",
+        "Neural networks",
+        "Complex adaptive systems"
+    ]
+}

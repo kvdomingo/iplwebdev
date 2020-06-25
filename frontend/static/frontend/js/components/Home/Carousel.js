@@ -12,13 +12,11 @@ import { Image } from 'cloudinary-react';
 
 
 export default function IntroCarousel() {
-    const ar = (window.innerHeight < window.innerWidth)
-        ? '16:9'
-        : '9:16';
+    const ar = (window.screen.width/window.screen.height).toFixed(2);
     return (
         <Container fluid className='px-0'>
             <Carousel
-                className='Carousel'
+                className='main-carousel py-0 my-0'
                 activeItem={1}
                 length={3}
                 showControls

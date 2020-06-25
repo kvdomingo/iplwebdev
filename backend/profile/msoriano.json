@@ -1,0 +1,55 @@
+{
+    "fullName": "Maricor N. Soriano",
+    "contact": [
+        {"email": "msoriano@nip.upd.edu.ph"}
+    ],
+    "role": "",
+    "references": [
+        {
+            "href": "http://nip.upd.edu.ph/app/uploads/2019/10/2012ar-ipl.pdf",
+            "text": "IPL Annual Report 2012"
+        },
+        {
+            "href": "http://nip.upd.edu.ph/app/uploads/2019/10/2013ar-ipl.pdf",
+            "text": "IPL Annual Report 2013"
+        },
+        {
+            "href": "http://www.rappler.com/science-nature/28036-pinoy-gadget-tubbataha-assessments",
+            "text": "Pinoy-made gadget used in Tubbataha assessment"
+        },
+        {
+            "href": "http://www.gmanetwork.com/news/video/158284/24oras/pinsala-ng-sumadsad-na-chinese-fishing-vessel-sa-tubbataha-reef-kasinglawak-na-raw-ng-5-basketball-courts",
+            "text": "Pinsala ng sumadsad na Chinese fishing vessel sa Tubbataha Reef, kasinglawak na raw ng 5 basketball courts"
+        },
+        {
+            "href": "http://www.youtube.com/watch?v=ucMVM3LRqRM",
+            "text": "Tubbataha scars will heal, says expert"
+        },
+        {
+            "href": "https://upd.edu.ph/physics-professor-bags-top-pcieerd-rd-award/",
+            "text": "Physics professor bags top PCIEERD R&D award"
+        }
+    ],
+    "academic": [
+        {
+            "position": "Professor 7",
+            "institution": "National Institute of Physics"
+        }
+    ],
+    "administrative": [
+        {
+            "position": "Deputy Director of Academic Affairs",
+            "institution": "National Institute of Physics",
+            "duration": "2006 - 2011"
+        },
+        {
+            "position": "Editor-in-Chief",
+            "institution": "Science Diliman",
+            "duration": "2007 - 2011"
+        }
+    ],
+    "interests": [
+        "Color, video and image processing applied to marine science, art conservation, biometrics, and spectral and medical imaging",
+        "Physics education"
+    ]
+}

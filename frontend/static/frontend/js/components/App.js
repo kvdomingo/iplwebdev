@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import AOS from 'aos';
 import Loading from './Loading';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import Routes from './Routes';
 
 
@@ -18,6 +19,7 @@ export default class App extends React.Component {
                 <Suspense fallback={<Loading />}>
                     {Routes}
                 </Suspense>
+                <Footer />
             </Router>
         );
     }

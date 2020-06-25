@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import {
     MDBNavbar as Navbar,
     MDBNavbarBrand as NavbarBrand,
@@ -8,6 +8,7 @@ import {
     MDBNavbarToggler as NavbarToggler,
     MDBCollapse as Collapse,
 } from 'mdbreact';
+import { Link, withRouter } from 'react-router-dom';
 import { Image } from 'cloudinary-react';
 
 
@@ -26,35 +27,71 @@ const navLinks = [
     { name: 'Join', path: '/join' },
 ];
 
-export default class Navigation extends React.Component {
+class Navigation extends React.Component {
     state = {
         isOpen: false,
         dark: true,
         logo: 'IPL_Logo-_White',
         color: '',
+        fixed: 'fixed-top',
     }
 
     componentDidMount() {
         this.handleNav();
         document.addEventListener('scroll', this.handleNav);
+        this.changePageNavStyle(window.location.pathname);
+        this.props.history.listen(() => this.changePageNavStyle(window.location.pathname));
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            window.scrollTo(0, 0);
+            this.setState({ isOpen: false });
+        }
     }
 
     componentWillUnmount() {
         document.removeEventListener('scroll', this.handleNav);
     }
 
+    changePageNavStyle = (pathName) => {
+        if (pathName === '/') {
+            this.setState({
+                logo: 'IPL_Logo-_White',
+                color: '',
+                dark: true,
+                fixed: 'fixed-top',
+            });
+        } else {
+            this.setState({
+                logo: 'IPL_Logo',
+                color: 'grey lighten-4',
+                dark: false,
+                fixed: 'sticky-top',
+            });
+        }
+    }
+
     handleNav = () => {
-        if (window.scrollY > 30) {
+        if (window.location.pathname === '/') {
+            if (window.scrollY > 30) {
+                this.setState({
+                    dark: false,
+                    logo: 'IPL_Logo',
+                    color: 'grey lighten-4',
+                });
+            } else {
+                this.setState({
+                    dark: true,
+                    logo: 'IPL_Logo-_White',
+                    color: '',
+                });
+            }
+        } else {
             this.setState({
                 dark: false,
                 logo: 'IPL_Logo',
                 color: 'grey lighten-4',
-            });
-        } else {
-            this.setState({
-                dark: true,
-                logo: 'IPL_Logo-_White',
-                color: '',
             });
         }
     }
@@ -69,26 +106,28 @@ export default class Navigation extends React.Component {
                 dark={this.state.dark}
                 light={!this.state.dark}
                 expand='lg'
-                className={`fixed-top ${this.state.color} navbar-slick`}
+                className={`${this.state.fixed} ${this.state.color} navbar-slick`}
                 style={styles.killShadow}
                 >
                 <NavbarBrand>
-                    <Image
-                        cloudName='kdphotography-assets'
-                        publicId={`ipl/${this.state.logo}`}
-                        secure
-                        responsive
-                        responsiveUseBreakpoints
-                        dpr='auto'
-                        height='60'
-                        crop='scale'
-                        />
+                    <Link to='/'>
+                        <Image
+                            cloudName='kdphotography-assets'
+                            publicId={`ipl/${this.state.logo}`}
+                            secure
+                            responsive
+                            responsiveUseBreakpoints
+                            dpr='auto'
+                            height='60'
+                            crop='scale'
+                            />
+                    </Link>
                 </NavbarBrand>
                 <NavbarToggler onClick={this.toggleCollapse} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <NavbarNav right>
                         {navLinks.map(({ name, path }, i) => (
-                            <NavItem>
+                            <NavItem key={path}>
                                 <NavLink to={path}>{name}</NavLink>
                             </NavItem>
                         ))}
@@ -98,3 +137,6 @@ export default class Navigation extends React.Component {
         );
     }
 }
+
+
+export default withRouter(Navigation);
