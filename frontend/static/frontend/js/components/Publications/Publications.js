@@ -11,6 +11,7 @@ import {
     MDBDataTable as DataTable,
 } from 'mdbreact';
 import Loading from '../Loading';
+import dateFormat from 'dateformat';
 
 
 export default class Publications extends React.Component {
@@ -31,7 +32,7 @@ export default class Publications extends React.Component {
                 .then(res => res.json())
                 .then(data => {
                     let rawData = { ...data },
-                        headers = ['authors', 'title', 'journal', 'volume', 'issue', 'year', 'url'],
+                        headers = ['authors', 'title', 'journal', 'volume', 'issue', 'month', 'url'],
                         rows = [];
                     let columns = [
                         {
@@ -61,7 +62,7 @@ export default class Publications extends React.Component {
                         },
                         {
                             label: 'Date',
-                            field: 'year',
+                            field: 'month',
                             sort: 'desc',
                         },
                         {
@@ -74,9 +75,16 @@ export default class Publications extends React.Component {
                     for (let raw in rawData) {
                         let row = {};
                         for (let head of headers) {
-                            if (head !== 'url') row[head] = rawData[raw][head];
-                            else {
+                            if (head === 'url') {
                                 row[head] = <a href={rawData[raw][head]} rel='noopener noreferrer' target='_blank' className={`btn btn-sm ${rawData[raw][head] ? 'btn-primary' : 'blue-grey lighten-2 disabled'}`}>Read</a>
+                            } else if (head === 'month') {
+                                if (rawData[raw][head] != null) {
+                                    let now = (new Date()).getFullYear();
+                                    now = new Date(now, rawData[raw][head] - 1);
+                                    row[head] = dateFormat(now, 'mmmm');
+                                }
+                            } else {
+                                row[head] = rawData[raw][head];
                             }
                         }
                         rows.push(row);

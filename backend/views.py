@@ -23,6 +23,6 @@ class PublicationApi(generics.ListAPIView):
 
 
 class AwardApi(generics.ListAPIView):
-    queryset = Award.objects.all()
+    queryset = Award.objects.all().order_by('-year')
     serializer_class = AwardSerializer
     filterset_fields = ['awardee', 'year']

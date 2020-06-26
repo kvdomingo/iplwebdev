@@ -4,12 +4,14 @@ import { Route, Switch } from 'react-router-dom';
 const Home = lazy(() => import('./Home/Home')),
       About = lazy(() => import('./About/About')),
       Pubs = lazy(() => import('./Publications/Publications')),
+      Profile = lazy(() => import('./Profile/Profile')),
       Err404 = lazy(() => import('./NotFound404'));
 
 const routes = [
     { path: '/', name: 'Home', Component: Home, exact: true },
     { path: '/about', name: 'About', Component: About, exact: false },
     { path: '/publications', name: 'Publications', Component: Pubs, exact: true },
+    { path: '/profile/:slug', name: 'Profile', Component: Profile, exact: false },
 ];
 
 export default (
