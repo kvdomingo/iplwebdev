@@ -33,7 +33,7 @@ const relatedLinks = [
     },
 ];
 
-export default function About() {
+export default function Sidebar() {
     const { pathname } = window.location;
     const navLinks = [
         {

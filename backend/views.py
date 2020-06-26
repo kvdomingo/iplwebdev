@@ -19,7 +19,7 @@ def profile(request):
 class PublicationApi(generics.ListAPIView):
     queryset = Publication.objects.all().order_by('-id')
     serializer_class = PublicationSerializer
-    filterset_fields = ['publication_type', 'year']
+    filterset_fields = ['publication_type', 'year', 'subgroup']
 
 
 class AwardApi(generics.ListAPIView):
