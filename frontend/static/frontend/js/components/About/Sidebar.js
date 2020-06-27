@@ -61,6 +61,7 @@ export default function Sidebar() {
                     <ListGroupItem
                         key={path}
                         className={pathname === path ? 'blue-grey' : null}
+                        style={pathname === path ? { border: '1px solid gray' } : null }
                         href={path}
                         active={pathname === path}
                         >

@@ -122,7 +122,7 @@ class Project(models.Model):
     collaborators = models.CharField(max_length=255)
     funding = models.CharField(max_length=255)
     start_date = models.DateField()
-    end_date = models.DateField(blank=True)
+    end_date = models.DateField(blank=True, null=True)
     overview = models.TextField()
     subgroup = models.ForeignKey(
         'Subgroup',
@@ -142,6 +142,7 @@ class Subgroup(models.Model):
     code = models.CharField(choices=SUBGROUP, max_length=3, unique=True)
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
+    cover_photo = models.URLField(blank=True)
 
     def __str__(self):
         return self.name

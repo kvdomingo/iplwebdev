@@ -98,14 +98,20 @@ class Subgroup extends React.Component {
                                                 <td className='text-muted'>Project Leader</td>
                                                 <td>{proj.project_leader}</td>
                                             </tr>
-                                            <tr>
-                                                <td className='text-muted'>Collaborators</td>
-                                                <td>{proj.collaborators}</td>
-                                            </tr>
-                                            <tr>
-                                                <td className='text-muted'>Funding</td>
-                                                <td>{proj.funding}</td>
-                                            </tr>
+                                            {proj.collaborators
+                                                ? <tr>
+                                                    <td className='text-muted'>Collaborators</td>
+                                                    <td>{proj.collaborators}</td>
+                                                </tr>
+                                                : null
+                                            }
+                                            {proj.funding
+                                                ? <tr>
+                                                    <td className='text-muted'>Funding</td>
+                                                    <td>{proj.funding}</td>
+                                                </tr>
+                                                : null
+                                            }
                                             <tr>
                                                 <td className='text-muted'>Duration</td>
                                                 <td>{proj.start_date} - {proj.end_date}</td>

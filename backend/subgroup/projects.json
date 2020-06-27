@@ -28,5 +28,45 @@
         "end_date": "2014-01-01",
         "overview": "The Versatile Instrumentation System for Science Education and Research (VISSER) project aims to have a system centered around a handled microcontroller-based universal platform. Using this as the \"brain\", many different sensors can be connected to it and controlled to perform experiments in various science field. The transition from one experiment to another will be effortless that its is envisioned that the units can be used in several experiments on various topics in a single day. It will fully integrate the hardware and software and will supplement by well-written, highly descriptive manuals that will facilitate individual learning. The hardware consists of a multichannel data acquisition, plug and play analog and digital sensors that run on an Arduino microcontroller. The software includes data storage, control, user interface, as well as analysis tools that will be developed using open source environments. The documentation will be highly descriptive manuals for the laboratory modules. The overarching objective of this project is to develop instrumentation systems to enhance scientific pedagogy and research that can be deployed in all secondary and tertiary schools in the Philippines. The specific research objectives are as follows: 1. Develop the hardware component which consists of a hand-held multichannel data acquisition system and plug and play analog and digital sensors. 2. Develop the software which includes data storage, control, user interface, as well as analytical tools. 3. Develop high-quality laboratory manuals and instructional materials that integrate theory and real-world measurements. 4. Develop specific sets of laboratory experiments in biology, chemistry, physics, environmental science and engineering. 5. Develop enabling technologies with applications to natural disaster warning and mitigation. 6. Develop and produce highly-trained professionals in the area of science education, instrumentation design and information systems.",
         "subgroup": "SBO"
+    },
+    "3": {
+        "name": "Coral Reef Visualization and Assessment (CoRVA)",
+        "project_leader": "Dr. Maricor Soriano",
+        "collaborators": "",
+        "funding": "Department of Environment and Natural Resources",
+        "start_date": "2014-01-01",
+        "end_date": "2018-01-01",
+        "overview": "",
+        "subgroup": "VIP"
+    },
+    "4": {
+        "name": "Cartography of Old Informs the New (COIN)",
+        "project_leader": "Dr. Maricor Soriano",
+        "collaborators": "",
+        "funding": "Department of Science and Technology",
+        "start_date": "2016-01-01",
+        "end_date": "2017-01-01",
+        "overview": "",
+        "subgroup": "VIP"
+    },
+    "5": {
+        "name": "Coral Reef Assessment and Visualization Advanced Tools (CRAVAT)",
+        "project_leader": "Dr. Maricor Soriano",
+        "collaborators": "",
+        "funding": "Department of Science and Technology",
+        "start_date": "2014-01-01",
+        "end_date": "2016-01-01",
+        "overview": "",
+        "subgroup": "VIP"
+    },
+    "6": {
+        "name": "Stamina4Space OPTIKAL",
+        "project_leader": "Dr. Maricor Soriano",
+        "collaborators": "",
+        "funding": "Department of Science and Technology",
+        "start_date": "2019-01-01",
+        "end_date": null,
+        "overview": "",
+        "subgroup": "VIP"
     }
 }

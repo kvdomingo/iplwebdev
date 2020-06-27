@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import Carousel from './Carousel';
 import Research from './Research';
 import Principals from './Principals';
+import Latest from './Latest';
 import './Home.scss';
 
 
@@ -16,6 +17,7 @@ export default function Home() {
             <Carousel />
             <Research />
             <Principals />
+            <Latest />
         </div>
     );
 }

@@ -4,37 +4,27 @@ import {
     MDBRow as Row,
     MDBCol as Col,
     MDBTypography as Type,
+    MDBIcon as Icon,
 } from 'mdbreact';
-import { Image } from 'cloudinary-react';
 
 
 export default function Research() {
     const researchAreas = [
-        { publicId: 'signalProc', caption: 'Signal Processing' },
-        { publicId: 'cxsystems', caption: 'Complex Systems & Networks' },
-        { publicId: 'videoimgproc', caption: 'Video & Image Processing' },
-        { publicId: 'bio', caption: 'Biological Systems' },
-        { publicId: 'optics', caption: 'Optics' },
+        { icon: 'microscope', caption: 'Optical Instrumentation' },
+        { icon: 'atom', caption: 'Photonics' },
+        { icon: 'project-diagram', caption: 'Complex Systems' },
+        { icon: 'wave-square', caption: 'Signal and Image Processing' },
+        { icon: 'brain', caption: 'Machine Learning' },
     ];
 
     return (
         <Container fluid className='default-color-dark py-5'>
             <Type tag='h2' variant='h1-responsive' className='text-white text-center mt-3'>Research</Type>
             <Row className='row-cols-1 row-cols-md-5'>
-                {researchAreas.map(({ publicId, caption }, i) => (
-                    <Col>
-                        <Image
-                            className='img-fluid'
-                            cloudName='kdphotography-assets'
-                            publicId={`ipl/${publicId}`}
-                            secure
-                            responsive
-                            responsiveUseBreakpoints
-                            width='auto'
-                            dpr='auto'
-                            crop='scale'
-                            />
-                        <Type tag='h3' variant='h5-responsive' className='text-white text-center'>{caption}</Type>
+                {researchAreas.map(({ icon, caption }, i) => (
+                    <Col className='text-white text-center'>
+                        <Icon fas icon={icon} size='10x' className='my-5' />
+                        <Type tag='h3' variant='h5-responsive'>{caption}</Type>
                     </Col>
                 ))}
             </Row>

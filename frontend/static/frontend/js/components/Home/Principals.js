@@ -3,14 +3,10 @@ import {
     MDBContainer as Container,
     MDBRow as Row,
     MDBCol as Col,
-    MDBCard as Card,
     MDBTypography as Type,
-    MDBCardBody as CardBody,
-    MDBCardImage as CardImage,
-    MDBCardTitle as CardTitle,
-    MDBCardText as CardText,
 } from 'mdbreact';
 import { Link } from 'react-router-dom';
+import { Image } from 'cloudinary-react';
 
 
 export default function Principals() {
@@ -50,26 +46,34 @@ export default function Principals() {
     return (
         <Container fluid className='py-5'>
             <Type tag='h2' variant='h1-responsive' className='text-center mt-3 mb-5'>Principal Investigators</Type>
-            <Row className='row-cols-1 row-cols-md-5'>
+            <Container>
                 {principals.map(({ slug, publicId, title, body }, i) => (
-                    <Col className='mb-3 px-2'>
-                        <Card className='h-100'>
-                            <Link to={`/profile/${slug}`}>
-                                <CardImage
-                                    className='img-fluid'
-                                    src={`https://res.cloudinary.com/kdphotography-assets/image/upload/ar_1,c_fill,w_auto,dpr_auto,f_auto,g_face/v1/ipl/${publicId}`}
-                                    waves
-                                    href={`profile/${slug}`}
-                                    />
-                            </Link>
-                            <CardBody>
-                                <CardTitle>{title}</CardTitle>
-                                <CardText>{body}</CardText>
-                            </CardBody>
-                        </Card>
-                    </Col>
+                    <React.Fragment key={i}>
+                        <Row className={i % 2 === 0 ? null : 'd-flex flex-row-reverse text-md-right'}>
+                            <Col md='2' className='mb-3 mb-md-0 d-flex align-items-center'>
+                                <Link to={`/profile/${slug}`}>
+                                    <Image
+                                        cloudName='kdphotography-assets'
+                                        className='img-fluid'
+                                        publicId={`ipl/${publicId}`}
+                                        secure
+                                        responsive
+                                        responsiveUseBreakpoints
+                                        width='auto'
+                                        dpr='auto'
+                                        crop='scale'
+                                        />
+                                </Link>
+                            </Col>
+                            <Col md='10' className='d-flex align-items-right flex-column justify-content-center'>
+                                <Type tag='h3' variant='h4-responsive'>{title}</Type>
+                                <p>{body}</p>
+                            </Col>
+                        </Row>
+                        <hr />
+                    </React.Fragment>
                 ))}
-            </Row>
+            </Container>
         </Container>
     );
 }
