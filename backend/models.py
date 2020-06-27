@@ -85,9 +85,9 @@ class Member(models.Model):
     first_name = models.CharField(max_length=64)
     middle_name = models.CharField(max_length=64, blank=True)
     last_name = models.CharField(max_length=64)
-    honorific = models.CharField(max_length=16, blank=True)
-    suffix = models.CharField(max_length=16, blank=True)
-    status = models.CharField(choices=MEMBER_STATUS, max_length=16)
+    honorific = models.CharField(max_length=32, blank=True)
+    suffix = models.CharField(max_length=32, blank=True)
+    status = models.CharField(choices=MEMBER_STATUS, max_length=32)
     subgroup = models.ForeignKey(
         'Subgroup',
         on_delete=models.CASCADE,
