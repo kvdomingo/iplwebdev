@@ -42,6 +42,7 @@ export default function Sidebar({ data }) {
                     <ListGroupItem
                         key={path}
                         className={pathname === path ? 'blue-grey' : null}
+                        style={pathname === path ? { border: '1px solid gray' } : null }
                         href={path}
                         active={pathname === path}
                         >
@@ -55,7 +56,7 @@ export default function Sidebar({ data }) {
                     <ul className='list-unstyled'>
                         {data.faculty.map((fac, i) => (
                             <li key={i}>
-                                {fac}
+                                {`${fac.honorific} ${fac.first_name} ${fac.middle_name} ${fac.last_name}${fac.suffix ? ', ' + fac.suffix : ''}`}
                             </li>
                         ))}
                     </ul>
@@ -66,7 +67,7 @@ export default function Sidebar({ data }) {
                     <ul className='list-unstyled'>
                         {data.graduate.map((grad, i) => (
                             <li key={i}>
-                                {grad}
+                                {`${grad.first_name} ${grad.last_name}${grad.suffix ? ', ' + grad.suffix : ''}`}
                             </li>
                         ))}
                     </ul>
@@ -77,7 +78,7 @@ export default function Sidebar({ data }) {
                     <ul className='list-unstyled'>
                         {data.undergraduate.map((grad, i) => (
                             <li key={i}>
-                                {grad}
+                                {grad.first_name} {grad.last_name}
                             </li>
                         ))}
                     </ul>

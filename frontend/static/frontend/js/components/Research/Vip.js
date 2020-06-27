@@ -12,53 +12,49 @@ import Loading from '../Loading';
 
 const inNews = [
     {
-        link: 'http://www.up.edu.ph/visualizing-the-ties-that-bind-in-the-pdaf/',
-        label: '[2013 UP Forum] Visualizing the Ties that Bind in the PDAF'
+        link: 'http://www.rappler.com/science-nature/28036-pinoy-gadget-tubbataha-assessments',
+        label: '[2013 Rappler] An automated rapid reef assessment system invented by the team of Dr. Maricor Soriano of the University of Philippines (UP) was one of the technologies used to make permanent visual records for the damage done at the Tubbataha reef'
     },
     {
-        link: 'http://technology.inquirer.net/29119/what-science-teaches-us-about-the-pork-network',
-        label: '[2013 Inquirer Print/inquirer.net] UP physics prof does the math on pork plus NGOs'
+        link: 'http://www.gmanetwork.com/news/video/158284/24oras/pinsala-ng-sumadsad-na-chinese-fishing-vessel-sa-tubbataha-reef-kasinglawak-na-raw-ng-5-basketball-courts',
+        label: '[2013 GMANews] Pinsala ng sumadsad na Chinese fishing vessel sa Tubbataha Reef, kasinglawak na raw ng 5 basketball courts'
     },
     {
-        link: 'http://www.gmanetwork.com/news/story/325579/scitech/science/up-physicists-map-pork-releases-from-lawmakers-to-ngos',
-        label: '[2013 GMANews] UP physicists map pork releases from lawmakers to NGOs'
+        link: 'http://www.youtube.com/watch?v=ucMVM3LRqRM',
+        label: '[2013 ANC] A new team of experts is headed to Tubbataha to take new images of the reef following the removal of the Chinese fishing vessel'
     },
-    {
-        link: 'http://www.abs-cbnnews.com/focus/09/09/13/how-pork-barrel-connects-lawmakers-ngos',
-        label: '[2013 ABS-CBN] How pork barrel connects lawmakers, NGOs'
-    },
-    {
-        link: 'http://www.rappler.com/nation/38526-visualizing-pork-barrel-scandal-ties',
-        label: '[2013 Rappler] Pork barrel scam: Visualizing the ties that bind'
-    },
-
 ];
 
-export default class TeamOne extends React.Component {
+export default class Vip extends React.Component {
     state = {
         publications: [],
         loading: true,
     }
 
     componentDidMount() {
-        this.props.handleHeadline('Team One');
+        this.props.handleHeadline('Video and Image Processing');
         this.props.handleSidebar({
-            faculty: ['Dr. Caesar A. Saloma'],
+            faculty: ['Dr. Maricor N. Soriano'],
             graduate: [
-                'Teresa Pulido',
-                'Joshua Jesli Santiago',
-                'Anthony Paul Fox',
+                'Ritz Aguilar, M.S.',
+                'Alfred Abella, M.S.',
+                'Wilbur Galarion',
+                'Jayson Cubero',
+                'Mark Jeremy Narag',
             ],
             undergraduate: [
-                'Kit Guial',
-                'Adrielle Cusi',
-                'Rafael Bagood',
-                'Alec Rigonan',
-                'Bea Movido',
+                'Andrea Advincula',
+                'Lou Josef Tan',
+                'Creo Baylon',
+                'Kenneth Domingo',
+                'Rene Principe Jr.',
+                'Jemima Bian Anila',
+                'Jireh Vera Cruz',
+                'Kyngzer-Rem Vargas',
             ],
         });
 
-        fetch('/api/publication?subgroup=ITO&year=2019&publication_type=reg')
+        fetch('/api/publication?subgroup=VIP&year=2019&publication_type=reg')
             .then(res => res.json())
             .then(publications => this.setState({
                 loading: false,
@@ -71,11 +67,11 @@ export default class TeamOne extends React.Component {
         else return (
             <div>
                 <Helmet>
-                    <title>Team One | Instrumentation Physics Laboratory</title>
+                    <title>Video and Image Processing | Instrumentation Physics Laboratory</title>
                 </Helmet>
 
                 <p>
-                    Professor Dr Saloma aims to provide members of IPL Team One with an enabling and nurturing environment that will entice and prepare them for a productive professional career as an independent scientist and researcher. He and his team are interested in a variety of research topics ranging from formulating novel approaches in signal recovery and information processing under low signal-to-noise ratios to developing a better understanding of the collective dynamics of interacting many-body systems and spatio-temporal social adaptive networks.
+                    The group works on improving and developing new methods of acquisition and manipulation of images and other signals from cameras and microscopes to extract and enhance information. We develop instrumentation and algorithms to analyse signals, images and video from multidisciplinary domains such as marine science, arts and heritage, medicine, and sports.
                 </p>
 
                 <Type tag='h2' variant='h3-responsive text-success mt-5 mb-2'>Recent Publications</Type>

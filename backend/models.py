@@ -29,6 +29,13 @@ SUBGROUP = (
     ('CSG', 'Complexity Science Group'),
 )
 
+MEMBER_STATUS = (
+    ('faculty', 'Faculty'),
+    ('graduate', 'Graduate student'),
+    ('undergraduate', 'Undergraduate student'),
+    ('alumni', 'Alumni'),
+)
+
 class Publication(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
@@ -43,14 +50,19 @@ class Publication(models.Model):
     start_page = models.IntegerField(blank=True, null=True)
     end_page = models.IntegerField(blank=True, null=True)
     url = models.URLField(max_length=255, blank=True, null=True)
-    subgroup = models.CharField(choices=SUBGROUP, max_length=3)
+    subgroup = models.ForeignKey(
+        'Subgroup',
+        on_delete=models.SET_NULL,
+        to_field='code',
+        null=True,
+    )
     comments = models.TextField(blank=True, null=True)
 
-    def __repr__(self):
-        return f"<Publication: {self.authors}. ({self.year}). {self.title}. {self.journal} {self.volume}>"
+    class Meta:
+        ordering = ['-year', '-month']
 
     def __str__(self):
-        return f"{self.authors}. {self.title}. <a href='{self.url}' target='_blank'><i>{self.journal} <b>{self.volume}</b></i></a>. ({self.year})"
+        return f"{self.authors}. {self.title}, {self.journal} ({self.year})"
 
 
 class Award(models.Model):
@@ -62,8 +74,74 @@ class Award(models.Model):
     year = models.IntegerField()
     url = models.URLField(max_length=255, blank=True)
 
-    def __repr__(self):
-        return f"<Award: {self.awardee}, {self.award}, {self.year}>"
+    class Meta:
+        ordering = ['-year']
 
     def __str__(self):
-        return f"{self.award}<br /><small class='text-secondary'>{self.awarding_body}, {self.year}</small>"
+        return f"{self.awardee}: {self.award}, {self.awarding_body} ({self.year})"
+
+
+class Member(models.Model):
+    first_name = models.CharField(max_length=64)
+    middle_name = models.CharField(max_length=64, blank=True)
+    last_name = models.CharField(max_length=64)
+    honorific = models.CharField(max_length=16, blank=True)
+    suffix = models.CharField(max_length=16, blank=True)
+    status = models.CharField(choices=MEMBER_STATUS, max_length=16)
+    subgroup = models.ForeignKey(
+        'Subgroup',
+        on_delete=models.CASCADE,
+        to_field='code',
+    )
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
+
+
+class News(models.Model):
+    year = models.IntegerField()
+    source = models.CharField(max_length=64)
+    url = models.URLField()
+    description = models.TextField()
+    subgroup = models.ForeignKey(
+        'Subgroup',
+        on_delete=models.CASCADE,
+        to_field='code',
+    )
+
+    class Meta:
+        ordering = ['-year']
+
+    def __str__(self):
+        return self.description
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=255)
+    project_leader = models.CharField(max_length=255)
+    collaborators = models.CharField(max_length=255)
+    funding = models.CharField(max_length=255)
+    start_date = models.DateField()
+    end_date = models.DateField(blank=True)
+    overview = models.TextField()
+    subgroup = models.ForeignKey(
+        'Subgroup',
+        on_delete=models.CASCADE,
+        to_field='code',
+    )
+
+    class Meta:
+        ordering = ['-end_date', '-start_date']
+
+    def __str__(self):
+        return self.name
+
+
+class Subgroup(models.Model):
+    slug = models.SlugField(unique=True)
+    code = models.CharField(choices=SUBGROUP, max_length=3, unique=True)
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name

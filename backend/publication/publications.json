@@ -95,7 +95,7 @@
         "id":73,
         "publication_type":"reg",
         "authors":"J. Pang, J. Bantang",
-        "title":"Hodgkin\u00e2\u20ac\u201cHuxley neurons with defective and blocked ion channels",
+        "title":"Hodgkin-Huxley neurons with defective and blocked ion channels",
         "journal":"Int. J. Mod. Phys. C",
         "volume":26.0,
         "issue":null,
@@ -1690,5 +1690,23 @@
         "url":"https:\/\/doi.org\/10.1016\/j.physa.2020.124861",
         "comments":null,
         "subgroup":"CXT"
+    },
+    "94":{
+        "created":"2020-06-27 22:28:43.047091",
+        "modified":1578701143047,
+        "id":95,
+        "publication_type":"reg",
+        "authors":"AP Abella and MN Soriano",
+        "title":"Measurement of Eulerian vorticity beneath rotating surface waves",
+        "journal":"Physica Scripta",
+        "volume":null,
+        "issue":null,
+        "month":null,
+        "year":2020,
+        "start_page":null,
+        "end_page":null,
+        "url":"https:\/\/doi.org\/10.1088\/1402-4896\/aba056",
+        "comments":null,
+        "subgroup":"VIP"
     }
 }

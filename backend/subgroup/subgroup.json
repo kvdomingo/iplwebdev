@@ -1,0 +1,32 @@
+{
+    "0": {
+        "slug": "team-one",
+        "code": "ITO",
+        "name": "Team One",
+        "description": "Professor Dr Saloma aims to provide members of IPL Team One with an enabling and nurturing environment that will entice and prepare them for a productive professional career as an independent scientist and researcher. He and his team are interested in a variety of research topics ranging from formulating novel approaches in signal recovery and information processing under low signal-to-noise ratios to developing a better understanding of the collective dynamics of interacting many-body systems and spatio-temporal social adaptive networks."
+    },
+    "1": {
+        "slug": "vip",
+        "code": "VIP",
+        "name": "Video and Image Processing",
+        "description": "The group works on improving and developing new methods of acquisition and manipulation of images and other signals from cameras and microscopes to extract and enhance information. We develop instrumentation and algorithms to analyse signals, images and video from multidisciplinary domains such as marine science, arts and heritage, medicine, sports, and compressive sensing."
+    },
+    "2": {
+        "slug": "sync-bio-optics",
+        "code": "SBO",
+        "name": "Synchronization and BioOptics",
+        "description": "We develop and construct advanced microscope systems for rapid and non-invasive characterization of various systems ranging from semiconductor devices to biological systems. We are also interested in the application of recent advances in optical technology to various instrumentation research ventures. In particular, we manipulate the phase, amplitude, and polarization state of light, and use the generated three-dimensional fields for various applications in optical microscopy, ranging from multiple beam optical trapping, micro-fabrication via nonlinear photo-polymerization, complex field coupling to advanced optical waveguides coupling for fiber sensors, among others. Interacting elements in various systems communicate and exhibit collective behavior for efficient functioning. Our group looks into the adjustment of the rhythms of natural and artificial systems due even if the interaction is weak or even below the detectable threshold. Current research thrusts of the group include noise induced pattern formation, spatial mode, time series analysis, particle tracking, transverse stability and synchronization of spatial modules in semiconductor lasers. Our group also looks into patterns and synchronization in historical records, literature and real signals."
+    },
+    "3": {
+        "slug": "cx-team",
+        "code": "CXT",
+        "name": "Complex Systems Team",
+        "description": "The group investigates sociotechnical systems that are rich in empirical data. We are actively involved in data mining social media, agent-based modeling of ecological systems, agent-based modeling of vehicular traffic, and analyzing complex networks."
+    },
+    "4": {
+        "slug": "complexity-science",
+        "code": "CSG",
+        "name": "Complexity Science Group",
+        "description": "We use the tools of physics in understanding a wide range of complex phenomena in nature and society. Our work can be categorized under three major themes. We use complex network tools for describing the behavior of social complex systems. We also analyze the statistical distributions of nonlinear dynamical systems like natural hazards using empirical data and results from scaled experiments. Finally, we apply a complex systems perspective in modeling the processes involved in the growth, transport, and cellular interactions in biological systems."
+    }
+}

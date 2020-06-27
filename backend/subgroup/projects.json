@@ -1,0 +1,32 @@
+{
+    "0": {
+        "name": "Automated Rapid Reef Assessment System (ARRAS)",
+        "project_leader": "Dr. Maricor Soriano",
+        "collaborators": "Dr. Wilfredo Licuanan (DLSU), Engr. Roel John Judilla (MAPUA), Dr. Prospero Naval (DCS, UPD), Dr. Cesar Villanoy (UP MSI), Dr. Laura David (UP MSI)",
+        "funding": "DOST-GIA (Total budget: Php 18,520,969)",
+        "start_date": "2010-06-01",
+        "end_date": "2013-11-01",
+        "overview": "The Automated Rapid Reef Assessment Program aims to create tools for quick and cost efficient coral reef assessment and visualization. Tools and protocol developed in the project have been deployed in more than 13 sites around the Philippines and were used to measure the grounding damage in Tubbataha Reefs Natural Park, a UNESCO World Heritage Site.",
+        "subgroup": "VIP"
+    },
+    "1": {
+        "name": "Versatile Instrument System for Science Education and Research - Sensors and Modules (VISSER::SM)",
+        "project_leader": "Dr. Giovanni Tapang",
+        "collaborators": "RD Gomez, RML Roxas-Villanueva, G Perez, I Su-Martinez, A Argayosa, R Lorenzo, N Altoveros",
+        "funding": "UP Emerging Interdisciplinary Research Cycle 2 2013-2015",
+        "start_date": "2013-01-01",
+        "end_date": "2015-01-01",
+        "overview": "The proposed project VISSER::SM (Versatile Instrument System for Science Education and Research - Sensors and Modules) addresses the lack of laboratory equipment and teaching modules in the Philippines and seeks to introduce low-cost and versatile research-grade laboratory equipment in our classrooms. VISSER::SM is a collaborative program with a very simple mission: \"Put modern science labs at every school & college\". The project involves researchers from UP Diliman, UP Los Banos and Balik Scientist Prof. Romel Gomez of the University of Maryland. The goal is to design and develop at least 40 home-grown experimental modules based on a handheld microcontroller-based universal platform that can replace existing experiments as well as be the basis for new sophisticated laboratory setups. ",
+        "subgroup": "SBO"
+    },
+    "2": {
+        "name": "Versatile Instrument System for Science Education and Research (VISSER)",
+        "project_leader": "Dr. Giovanni Tapang",
+        "collaborators": "RD Gomez, RML Roxas-Villanueva, G Perez, I Su-Martinez, A Argayosa, R Lorenzo, N Altoveros",
+        "funding": "Department of Science and Technology GIA 2012-2014",
+        "start_date": "2012-01-01",
+        "end_date": "2014-01-01",
+        "overview": "The Versatile Instrumentation System for Science Education and Research (VISSER) project aims to have a system centered around a handled microcontroller-based universal platform. Using this as the \"brain\", many different sensors can be connected to it and controlled to perform experiments in various science field. The transition from one experiment to another will be effortless that its is envisioned that the units can be used in several experiments on various topics in a single day. It will fully integrate the hardware and software and will supplement by well-written, highly descriptive manuals that will facilitate individual learning. The hardware consists of a multichannel data acquisition, plug and play analog and digital sensors that run on an Arduino microcontroller. The software includes data storage, control, user interface, as well as analysis tools that will be developed using open source environments. The documentation will be highly descriptive manuals for the laboratory modules. The overarching objective of this project is to develop instrumentation systems to enhance scientific pedagogy and research that can be deployed in all secondary and tertiary schools in the Philippines. The specific research objectives are as follows: 1. Develop the hardware component which consists of a hand-held multichannel data acquisition system and plug and play analog and digital sensors. 2. Develop the software which includes data storage, control, user interface, as well as analytical tools. 3. Develop high-quality laboratory manuals and instructional materials that integrate theory and real-world measurements. 4. Develop specific sets of laboratory experiments in biology, chemistry, physics, environmental science and engineering. 5. Develop enabling technologies with applications to natural disaster warning and mitigation. 6. Develop and produce highly-trained professionals in the area of science education, instrumentation design and information systems.",
+        "subgroup": "SBO"
+    }
+}

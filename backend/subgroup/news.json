@@ -1,0 +1,107 @@
+{
+    "0": {
+        "year": "2013",
+        "source": "UP Forum",
+        "url": "http:\/\/www.up.edu.ph\/visualizing-the-ties-that-bind-in-the-pdaf\/",
+        "description": "Visualizing the Ties that Bind in the PDAF",
+        "subgroup": "ITO"
+    },
+    "1": {
+        "year": "2013",
+        "source": "Inquirer",
+        "url": "http:\/\/technology.inquirer.net\/29119\/what-science-teaches-us-about-the-pork-network",
+        "description": "UP physics prof does the math on pork plus NGOs",
+        "subgroup": "ITO"
+    },
+    "2": {
+        "year": "2013",
+        "source": "GMA News",
+        "url": "http:\/\/www.gmanetwork.com\/news\/story\/325579\/scitech\/science\/up-physicists-map-pork-releases-from-lawmakers-to-ngos",
+        "description": "UP physicists map pork releases from lawmakers to NGOs",
+        "subgroup": "ITO"
+    },
+    "3": {
+        "year": "2013",
+        "source": "ABS-CBN",
+        "url": "http:\/\/www.abs-cbnnews.com\/focus\/09\/09\/13\/how-pork-barrel-connects-lawmakers-ngos",
+        "description": "How pork barrel connects lawmakers, NGOs",
+        "subgroup": "ITO"
+    },
+    "4": {
+        "year": "2013",
+        "source": "Rappler",
+        "url": "http:\/\/www.rappler.com\/nation\/38526-visualizing-pork-barrel-scandal-ties",
+        "description": "Pork barrel scam: Visualizing the ties that bind",
+        "subgroup": "ITO"
+    },
+    "5": {
+        "year": "2013",
+        "source": "Rappler",
+        "url": "http:\/\/www.rappler.com\/science-nature\/28036-pinoy-gadget-tubbataha-assessments",
+        "description": "Pinoy-made gadget used in Tubbataha assessment",
+        "subgroup": "VIP"
+    },
+    "6": {
+        "year": "2013",
+        "source": "GMA News",
+        "url": "http:\/\/www.gmanetwork.com\/news\/video\/158284\/24oras\/pinsala-ng-sumadsad-na-chinese-fishing-vessel-sa-tubbataha-reef-kasinglawak-na-raw-ng-5-basketball-courts",
+        "description": "Pinsala ng sumadsad na Chinese fishing vessel sa Tubbataha Reef, kasinglawak na raw ng 5 basketball courts",
+        "subgroup": "VIP"
+    },
+    "7": {
+        "year": "2013",
+        "source": "ANC",
+        "url": "http:\/\/www.youtube.com\/watch?v=ucMVM3LRqRM",
+        "description": "Tubbataha scars will heal, says expert",
+        "subgroup": "VIP"
+    },
+    "8": {
+        "year": "2014",
+        "source": "Nature News",
+        "url": "http:\/\/dx.doi.org\/10.1038\/nature.2014.14593",
+        "description": "Use of 'fish aggregating devices' could be unsustainable",
+        "subgroup": "CXT"
+    },
+    "9": {
+        "year": "2013",
+        "source": "MIT Technology Review",
+        "url": "https:\/\/www.technologyreview.com\/2013\/10\/15\/175998\/tweets-have-become-shorter-since-2009-say-computer-scientists",
+        "description": "Tweets Have Become Shorter Since 2009, Say Computer Scientists",
+        "subgroup": "CXT"
+    },
+    "10": {
+        "year": "2013",
+        "source": "TIME",
+        "url": "https:\/\/techland.time.com\/2013\/10\/16\/the-incredible-shrinking-tweet/",
+        "description": "The Incredible Shrinking Tweet",
+        "subgroup": "CXT"
+    },
+    "11": {
+        "year": "2013",
+        "source": "GMA News",
+        "url": "https:\/\/www.gmanetwork.com\/news\/hashtag\/content\/331521\/tweets-are-shrinking-up-physicists-say\/story\/",
+        "description": "Tweets are shrinking, UP physicists say",
+        "subgroup": "CXT"
+    },
+    "12": {
+        "year": "2013",
+        "source": "DISCOVER Magazine",
+        "url": "https:\/\/www.discovermagazine.com\/mind\/why-are-some-tweets-getting-shorter",
+        "description": "Why Are (Some) Tweets Getting Shorter?",
+        "subgroup": "CXT"
+    },
+    "13": {
+        "year": "2013",
+        "source": "National Post",
+        "url": "http:\/\/news.nationalpost.com\/2013\/11\/17\/who-needs-140-characters-anymore-tweets-keep-getting-shorter-new-study-finds\/",
+        "description": "Who needs 140 characters anymore? Tweets keep getting shorter, new study finds",
+        "subgroup": "CXT"
+    },
+    "14": {
+        "year": "2013",
+        "source": "Washington Post",
+        "url": "http:\/\/www.washingtonpost.com\/blogs\/the-switch\/wp\/2013\/10\/15\/this-chart-shows-our-tweets-are-getting-shorter\/",
+        "description": "This chart shows our tweets are getting shorter",
+        "subgroup": "CXT"
+    }
+}

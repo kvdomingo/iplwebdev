@@ -6,6 +6,7 @@ const Home = lazy(() => import('./Home/Home')),
       Pubs = lazy(() => import('./Publications/Publications')),
       Profile = lazy(() => import('./Profile/Profile')),
       Research = lazy(() => import('./Research/Research')),
+      Join = lazy(() => import('./Join/Join')),
       Err404 = lazy(() => import('./NotFound404'));
 
 const routes = [
@@ -14,6 +15,7 @@ const routes = [
     { path: '/publications', name: 'Publications', Component: Pubs, exact: true },
     { path: '/profile/:slug', name: 'Profile', Component: Profile, exact: false },
     { path: '/research', name: 'Research', Component: Research, exact: false },
+    { path: '/join', name: 'Join', Component: Join, exact: true },
 ];
 
 export default (

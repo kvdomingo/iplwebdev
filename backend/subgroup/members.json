@@ -1,0 +1,560 @@
+{
+    "0": {
+        "first_name": "Caesar",
+        "middle_name": "A.",
+        "last_name": "Saloma",
+        "honorific": "Dr.",
+        "suffix": "",
+        "status": "faculty",
+        "subgroup": "ITO"
+    },
+    "1": {
+        "first_name": "Teresa",
+        "middle_name": "",
+        "last_name": "Pulido",
+        "honorific": "",
+        "suffix": "M.S.",
+        "status": "graduate",
+        "subgroup": "ITO"
+    },
+    "2": {
+        "first_name": "Joshua Jesli",
+        "middle_name": "",
+        "last_name": "Santiago",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "ITO"
+    },
+    "3": {
+        "first_name": "Anthony Paul",
+        "middle_name": "",
+        "last_name": "Fox",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "ITO"
+    },
+    "4": {
+        "first_name": "Anthony Paul",
+        "middle_name": "",
+        "last_name": "Fox",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "ITO"
+    },
+    "5": {
+        "first_name": "Kit",
+        "middle_name": "",
+        "last_name": "Guial",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "ITO"
+    },
+    "6": {
+        "first_name": "Adrielle",
+        "middle_name": "",
+        "last_name": "Cusi",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "ITO"
+    },
+    "7": {
+        "first_name": "Rafael",
+        "middle_name": "",
+        "last_name": "Bagood",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "ITO"
+    },
+    "8": {
+        "first_name": "Alec Kevin",
+        "middle_name": "",
+        "last_name": "Rigonan",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "ITO"
+    },
+    "9": {
+        "first_name": "Bea",
+        "middle_name": "",
+        "last_name": "Movido",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "ITO"
+    },
+    "10": {
+        "first_name": "Maricor",
+        "middle_name": "N.",
+        "last_name": "Soriano",
+        "honorific": "Dr.",
+        "suffix": "",
+        "status": "faculty",
+        "subgroup": "VIP"
+    },
+    "11": {
+        "first_name": "Ritz Ann",
+        "middle_name": "",
+        "last_name": "Aguilar",
+        "honorific": "",
+        "suffix": "M.S.",
+        "status": "graduate",
+        "subgroup": "VIP"
+    },
+    "12": {
+        "first_name": "Alfred",
+        "middle_name": "",
+        "last_name": "Abella",
+        "honorific": "",
+        "suffix": "M.S.",
+        "status": "graduate",
+        "subgroup": "VIP"
+    },
+    "13": {
+        "first_name": "Wilbur",
+        "middle_name": "",
+        "last_name": "Galarion",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "VIP"
+    },
+    "14": {
+        "first_name": "Micholo Lanz",
+        "middle_name": "",
+        "last_name": "Medrana",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "VIP"
+    },
+    "15": {
+        "first_name": "Jayson",
+        "middle_name": "",
+        "last_name": "Cubero",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "VIP"
+    },
+    "16": {
+        "first_name": "Mark Jeremy",
+        "middle_name": "",
+        "last_name": "Narag",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "VIP"
+    },
+    "17": {
+        "first_name": "Andrea Rica",
+        "middle_name": "",
+        "last_name": "Advincula",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "VIP"
+    },
+    "18": {
+        "first_name": "Lou Josef",
+        "middle_name": "",
+        "last_name": "Tan",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "VIP"
+    },
+    "19": {
+        "first_name": "Creo",
+        "middle_name": "",
+        "last_name": "Baylon",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "VIP"
+    },
+    "20": {
+        "first_name": "Kenneth",
+        "middle_name": "",
+        "last_name": "Domingo",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "VIP"
+    },
+    "21": {
+        "first_name": "Rene",
+        "middle_name": "",
+        "last_name": "Principe Jr.",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "VIP"
+    },
+    "22": {
+        "first_name": "Jemima Bian",
+        "middle_name": "",
+        "last_name": "Anila",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "VIP"
+    },
+    "23": {
+        "first_name": "Jireh",
+        "middle_name": "",
+        "last_name": "Vera Cruz",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "VIP"
+    },
+    "24": {
+        "first_name": "Kyngzer-Rem",
+        "middle_name": "",
+        "last_name": "Vargas",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "VIP"
+    },
+    "25": {
+        "first_name": "Giovanni",
+        "middle_name": "A.",
+        "last_name": "Tapang",
+        "honorific": "",
+        "suffix": "",
+        "status": "faculty",
+        "subgroup": "SBO"
+    },
+    "26": {
+        "first_name": "Wynn Dunn",
+        "middle_name": "",
+        "last_name": "Improso",
+        "honorific": "",
+        "suffix": "M.S.",
+        "status": "graduate",
+        "subgroup": "SBO"
+    },
+    "27": {
+        "first_name": "Christian",
+        "middle_name": "",
+        "last_name": "Valgomera",
+        "honorific": "",
+        "suffix": "M.S.",
+        "status": "graduate",
+        "subgroup": "SBO"
+    },
+    "28": {
+        "first_name": "Jan Parvin",
+        "middle_name": "",
+        "last_name": "Zoluaga",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "SBO"
+    },
+    "29": {
+        "first_name": "Jamika Ann",
+        "middle_name": "",
+        "last_name": "Roque",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "SBO"
+    },
+    "30": {
+        "first_name": "Kristen Joyce",
+        "middle_name": "",
+        "last_name": "Cervantes",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "SBO"
+    },
+    "31": {
+        "first_name": "Daniella",
+        "middle_name": "",
+        "last_name": "Hernandez",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "SBO"
+    },
+    "32": {
+        "first_name": "Eric Joshua Vincent",
+        "middle_name": "",
+        "last_name": "Reyes",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "SBO"
+    },
+    "33": {
+        "first_name": "Paolo Rafael",
+        "middle_name": "",
+        "last_name": "Mawis",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "SBO"
+    },
+    "34": {
+        "first_name": "Emil Joseph",
+        "middle_name": "",
+        "last_name": "Mateo",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "SBO"
+    },
+    "35": {
+        "first_name": "Karl Angelo",
+        "middle_name": "",
+        "last_name": "Reyes",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "SBO"
+    },
+    "36": {
+        "first_name": "Patricia",
+        "middle_name": "",
+        "last_name": "Pangilinan",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "SBO"
+    },
+    "37": {
+        "first_name": "Chris Dion",
+        "middle_name": "",
+        "last_name": "Bautista",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "SBO"
+    },
+    "38": {
+        "first_name": "May",
+        "middle_name": "T.",
+        "last_name": "Lim",
+        "honorific": "Dr.",
+        "suffix": "",
+        "status": "faculty",
+        "subgroup": "CXT"
+    },
+    "39": {
+        "first_name": "Chester",
+        "middle_name": "",
+        "last_name": "Balingit",
+        "honorific": "",
+        "suffix": "M.S.",
+        "status": "graduate",
+        "subgroup": "CXT"
+    },
+    "40": {
+        "first_name": "Damian",
+        "middle_name": "",
+        "last_name": "Dailisan",
+        "honorific": "",
+        "suffix": "M.S.",
+        "status": "graduate",
+        "subgroup": "CXT"
+    },
+    "41": {
+        "first_name": "Louie",
+        "middle_name": "",
+        "last_name": "Rubio",
+        "honorific": "",
+        "suffix": "M.S.",
+        "status": "graduate",
+        "subgroup": "CXT"
+    },
+    "42": {
+        "first_name": "Ivan",
+        "middle_name": "",
+        "last_name": "Fenis",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "CXT"
+    },
+    "43": {
+        "first_name": "Jona",
+        "middle_name": "",
+        "last_name": "Vistal",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CXT"
+    },
+    "44": {
+        "first_name": "Jona",
+        "middle_name": "",
+        "last_name": "Vistal",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CXT"
+    },
+    "45": {
+        "first_name": "Charles",
+        "middle_name": "",
+        "last_name": "Diaz",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CXT"
+    },
+    "46": {
+        "first_name": "Crizzia",
+        "middle_name": "",
+        "last_name": "De Castro",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CXT"
+    },
+    "47": {
+        "first_name": "Kelvin",
+        "middle_name": "",
+        "last_name": "Bartilad",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CXT"
+    },
+    "48": {
+        "first_name": "Kenneth",
+        "middle_name": "",
+        "last_name": "Leo",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CXT"
+    },
+    "49": {
+        "first_name": "Johnrob",
+        "middle_name": "Y.",
+        "last_name": "Bantang",
+        "honorific": "Dr.",
+        "suffix": "",
+        "status": "faculty",
+        "subgroup": "CSG"
+    },
+    "50": {
+        "first_name": "Rene",
+        "middle_name": "C.",
+        "last_name": "Batac",
+        "honorific": "Dr.",
+        "suffix": "(Associate, DLSU)",
+        "status": "faculty",
+        "subgroup": "CSG"
+    },
+    "51": {
+        "first_name": "Marissa",
+        "middle_name": "G.",
+        "last_name": "Pastor",
+        "honorific": "Dr.",
+        "suffix": "(Associate, USC)",
+        "status": "faculty",
+        "subgroup": "CSG"
+    },
+    "52": {
+        "first_name": "Joshua Neal",
+        "middle_name": "",
+        "last_name": "Abuel",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "CSG"
+    },
+    "53": {
+        "first_name": "Reinier Xander",
+        "middle_name": "",
+        "last_name": "Ramos",
+        "honorific": "",
+        "suffix": "",
+        "status": "graduate",
+        "subgroup": "CSG"
+    },
+    "54": {
+        "first_name": "Jose Nazareno Gabriel",
+        "middle_name": "",
+        "last_name": "Macalintal",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CSG"
+    },
+    "55": {
+        "first_name": "Samantha Ruth",
+        "middle_name": "",
+        "last_name": "Lahoz",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CSG"
+    },
+    "56": {
+        "first_name": "Rian Fritz",
+        "middle_name": "",
+        "last_name": "Jalandoni",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CSG"
+    },
+    "57": {
+        "first_name": "Charles Louie",
+        "middle_name": "",
+        "last_name": "Fernan",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CSG"
+    },
+    "58": {
+        "first_name": "Matthew Joseph",
+        "middle_name": "",
+        "last_name": "Banaag",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CSG"
+    },
+    "59": {
+        "first_name": "Sarakiel",
+        "middle_name": "",
+        "last_name": "Rayco",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CSG"
+    },
+    "60": {
+        "first_name": "Maria Tisha",
+        "middle_name": "",
+        "last_name": "Bagasala",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CSG"
+    },
+    "61": {
+        "first_name": "Karl",
+        "middle_name": "",
+        "last_name": "Aleta",
+        "honorific": "",
+        "suffix": "",
+        "status": "undergraduate",
+        "subgroup": "CSG"
+    }
+}

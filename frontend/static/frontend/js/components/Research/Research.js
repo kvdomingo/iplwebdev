@@ -10,7 +10,7 @@ import './Research.scss';
 
 
 const Landing = lazy(() => import('./Landing')),
-      TeamOne = lazy(() => import('./TeamOne'));
+      Subgroup = lazy(() => import('./Subgroup'));
 
 class Research extends React.Component {
     state = {
@@ -28,9 +28,6 @@ class Research extends React.Component {
 
     render() {
         const { path } = this.props.match;
-        const routes = [
-            { url: `${path}/team-one`, name: 'Team One', Component: TeamOne },
-        ];
 
         return (
             <React.Fragment>
@@ -44,14 +41,12 @@ class Research extends React.Component {
                             <Route exact path={path}>
                                 <Landing handleHeadline={this.handleHeadline} />
                             </Route>
-                            {routes.map(({ url, Component }, i) => (
-                                <Route key={url} path={url}>
-                                    <Component
-                                        handleSidebar={this.handleSidebar}
-                                        handleHeadline={this.handleHeadline}
-                                        />
-                                </Route>
-                            ))}
+                            <Route path={`${path}/:slug`}>
+                                <Subgroup
+                                    handleSidebar={this.handleSidebar}
+                                    handleHeadline={this.handleHeadline}
+                                    />
+                            </Route>
                         </Switch>
                     </Col>
                 </Row>

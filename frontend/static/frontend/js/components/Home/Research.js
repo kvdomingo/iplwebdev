@@ -18,7 +18,7 @@ export default function Research() {
     ];
 
     return (
-        <Container fluid className='success-color-dark py-5'>
+        <Container fluid className='default-color-dark py-5'>
             <Type tag='h2' variant='h1-responsive' className='text-white text-center mt-3'>Research</Type>
             <Row className='row-cols-1 row-cols-md-5'>
                 {researchAreas.map(({ publicId, caption }, i) => (
