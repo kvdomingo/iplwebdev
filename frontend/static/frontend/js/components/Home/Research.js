@@ -4,26 +4,36 @@ import {
     MDBRow as Row,
     MDBCol as Col,
     MDBTypography as Type,
-    MDBIcon as Icon,
 } from 'mdbreact';
+import { Image } from 'cloudinary-react';
 
 
 export default function Research() {
     const researchAreas = [
         { icon: 'microscope', caption: 'Optical Instrumentation' },
-        { icon: 'atom', caption: 'Photonics' },
-        { icon: 'project-diagram', caption: 'Complex Systems' },
-        { icon: 'wave-square', caption: 'Signal and Image Processing' },
-        { icon: 'brain', caption: 'Machine Learning' },
+        { icon: 'laser', caption: 'Photonics' },
+        { icon: 'network', caption: 'Complex Systems' },
+        { icon: 'signal', caption: 'Signal and Image Processing' },
+        { icon: 'machine-learning', caption: 'Machine Learning' },
     ];
 
     return (
         <Container fluid className='default-color-dark py-5'>
             <Type tag='h2' variant='h1-responsive' className='text-white text-center mt-3'>Research</Type>
-            <Row className='row-cols-1 row-cols-md-5'>
+            <Row className='row-cols-2 row-cols-md-5'>
                 {researchAreas.map(({ icon, caption }, i) => (
                     <Col className='text-white text-center'>
-                        <Icon fas icon={icon} size='10x' className='my-5' />
+                        <Image
+                            cloudName='kdphotography-assets'
+                            className='img-fluid py-5 px-4 vector-white'
+                            publicId={`ipl/${icon}`}
+                            secure
+                            responsive
+                            responsiveUseBreakpoints
+                            width='auto'
+                            dpr='auto'
+                            crop='scale'
+                            />
                         <Type tag='h3' variant='h5-responsive'>{caption}</Type>
                     </Col>
                 ))}

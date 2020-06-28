@@ -98,7 +98,7 @@ export default function PageFooter() {
                     </Col>
                     <hr className='clearfix w-100 d-md-none pb-3' />
                     <Col md='3'>
-                        <Row className='row-cols-2 row-cols-md-4'>
+                        <Row className='row-cols-4'>
                             {footerLogos.map(({ publicId, link }, i) => (
                                 <Col className='mb-2 px-1' key={link}>
                                     <a href={link} rel='noopener noreferrer' target='_blank'>

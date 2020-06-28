@@ -69,7 +69,7 @@ export default function IntroCarousel() {
                             <Mask overlay='black-light' />
                         </View>
                         <CarouselCaption>
-                            <p>Congratulations to Dr. Giovanni A. Tapang for his appointment as the 7th Dean of the College of Science. His deanship was formally affirmed by UP Diliman Chancellor Dr. Michael L. Tan last 8 October 2019.</p>
+                            <p className='lead'>Congratulations to Dr. Giovanni A. Tapang for his appointment as the 7th Dean of the College of Science. His deanship was formally affirmed by UP Diliman Chancellor Dr. Michael L. Tan last 8 October 2019.</p>
                         </CarouselCaption>
                     </CarouselItem>
 
@@ -91,7 +91,7 @@ export default function IntroCarousel() {
                             <Mask overlay='black-light' />
                         </View>
                         <CarouselCaption>
-                            <p>Last October 14, 2019 (Monday), IPL welcomed its two new members, Bea Movido and Karl Aleta. Bea and Karl have successfully completed the month-long IPL Application Process which took place in September. Bea's and Karl's undergraduate researches are being supervised by Dr. Caesar Saloma and Dr. Johnrob Bantang, respectively.</p>
+                            <p className='lead'>Last October 14, 2019 (Monday), IPL welcomed its two new members, Bea Movido and Karl Aleta. Bea and Karl have successfully completed the month-long IPL Application Process which took place in September. Bea's and Karl's undergraduate researches are being supervised by Dr. Caesar Saloma and Dr. Johnrob Bantang, respectively.</p>
                         </CarouselCaption>
                     </CarouselItem>
 
