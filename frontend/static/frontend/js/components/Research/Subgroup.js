@@ -33,11 +33,11 @@ class Subgroup extends React.Component {
             .then(res => {
                 res = res[0];
                 let { name, description } = res,
-                    publications = res.publication_set.slice(0, 5),
+                    publications = res.publication_set.filter(({ publication_type }) => publication_type === 'reg').slice(0, 5),
                     members = {
-                        faculty: res.member_set.filter(mem => mem.status === 'faculty'),
-                        graduate: res.member_set.filter(mem => mem.status === 'graduate'),
-                        undergraduate: res.member_set.filter(mem => mem.status === 'undergraduate'),
+                        faculty: res.member_set.filter(({ status }) => status === 'faculty'),
+                        graduate: res.member_set.filter(({ status }) => status === 'graduate'),
+                        undergraduate: res.member_set.filter(({ status }) => status === 'undergraduate'),
                     },
                     projects = res.project_set.map((r, i) => {
                         r.start_date = dateFormat(new Date(r.start_date), 'yyyy');
